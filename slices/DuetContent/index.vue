@@ -13,9 +13,6 @@ const props = defineProps(
 );
 
 const { slice } = toRefs(props);
-const title_level = computed(() => {
-  return `h${slice.value.primary.title_level}`;
-});
 
 const title = computed(() => {
   const term = slice.value.items.map((item) => item.highlight_term);
@@ -36,9 +33,9 @@ const title = computed(() => {
   >
     <div class="c-duet-content__inner">
       <div class="c-duet-content__panel">
-        <component class="title" :is="title_level"
+        <Heading class="title" :level="slice.primary.title_level"
           ><span v-html="title"></span
-        ></component>
+        ></Heading>
         <PrismicRichText
           class="c-duet-content__content"
           :field="slice.primary.content"
