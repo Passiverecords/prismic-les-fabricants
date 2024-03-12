@@ -7,6 +7,10 @@ export default defineNuxtConfig({
   },
   modules: ["@nuxtjs/prismic"],
   app: {
+    pageTransition: {
+      name: "fade",
+      mode: "out-in",
+    },
     head: {
       link: [
         { href: "https://fonts.googleapis.com", rel: "preconnect" },
