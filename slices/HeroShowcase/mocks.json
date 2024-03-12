@@ -65,6 +65,11 @@
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "Notre mission :Répandre la joie et la sérénité, partout dans le monde, à travers les arts du fil, en respectant l’Homme et la Planète."
+			},
+			"showcasetitle": {
+				"__TYPE__": "FieldContent",
+				"value": "copy",
+				"type": "Text"
 			}
 		},
 		"items": [

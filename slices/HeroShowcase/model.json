@@ -13,13 +13,17 @@
       "imageUrl": "",
       "primary": {
         "showcasetitle": {
-          "type": "Link",
+          "type": "Text",
           "config": {
             "label": "Titre du projet",
-            "select": "document",
-            "customtypes": [
-              "title"
-            ]
+            "placeholder": ""
+          }
+        },
+        "showcaseBaseline": {
+          "type": "Text",
+          "config": {
+            "label": "Baseline du projet",
+            "placeholder": ""
           }
         },
         "showcasepicture": {
@@ -43,13 +47,6 @@
           "type": "Text",
           "config": {
             "label": "Description du projet",
-            "placeholder": ""
-          }
-        },
-        "showcaseBaseline": {
-          "type": "Text",
-          "config": {
-            "label": "Baseline du projet",
             "placeholder": ""
           }
         },

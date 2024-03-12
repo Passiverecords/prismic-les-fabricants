@@ -609,12 +609,22 @@ export interface HeroShowcaseSliceDefaultPrimary {
   /**
    * Titre du projet field in *HeroShowcase → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: hero_showcase.primary.showcasetitle
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  showcasetitle: prismic.ContentRelationshipField<"title">;
+  showcasetitle: prismic.KeyTextField;
+
+  /**
+   * Baseline du projet field in *HeroShowcase → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_showcase.primary.showcaseBaseline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  showcaseBaseline: prismic.KeyTextField;
 
   /**
    * Image liée au projet field in *HeroShowcase → Primary*
@@ -635,16 +645,6 @@ export interface HeroShowcaseSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   showcaseDescription: prismic.KeyTextField;
-
-  /**
-   * Baseline du projet field in *HeroShowcase → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_showcase.primary.showcaseBaseline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  showcaseBaseline: prismic.KeyTextField;
 
   /**
    * Lien vers le site du projet field in *HeroShowcase → Primary*
