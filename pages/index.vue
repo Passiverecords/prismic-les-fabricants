@@ -6,7 +6,7 @@
     <SliceZone
       wrapper="div"
       class="flow"
-      style="--spacing: 4.6rem"
+      style="--spacing: 6.4rem"
       :slices="page?.data.slices ?? []"
       :components="components"
     />

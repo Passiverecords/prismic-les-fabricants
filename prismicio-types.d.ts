@@ -69,7 +69,10 @@ export type BlogPostDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomeDocumentDataSlicesSlice = TestimonialsSlice | DuetContentSlice;
+type HomeDocumentDataSlicesSlice =
+  | PartnersLogoAreaSlice
+  | TestimonialsSlice
+  | DuetContentSlice;
 
 /**
  * Content for Home documents
@@ -420,6 +423,51 @@ export type HeroBannerSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *PartnersLogoArea → Items*
+ */
+export interface PartnersLogoAreaSliceDefaultItem {
+  /**
+   * Partner Logo field in *PartnersLogoArea → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: partners_logo_area.items[].partner_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  partner_logo: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for PartnersLogoArea Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PartnersLogoAreaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<PartnersLogoAreaSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *PartnersLogoArea*
+ */
+type PartnersLogoAreaSliceVariation = PartnersLogoAreaSliceDefault;
+
+/**
+ * PartnersLogoArea Shared Slice
+ *
+ * - **API ID**: `partners_logo_area`
+ * - **Description**: PartnersLogoArea
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PartnersLogoAreaSlice = prismic.SharedSlice<
+  "partners_logo_area",
+  PartnersLogoAreaSliceVariation
+>;
+
+/**
  * Primary content in *Testimonials → Items*
  */
 export interface TestimonialsSliceDefaultItem {
@@ -630,6 +678,10 @@ declare module "@prismicio/client" {
       HeroBannerSliceVariation,
       HeroBannerSliceDefault,
       HeroBannerSliceWithCallToAction,
+      PartnersLogoAreaSlice,
+      PartnersLogoAreaSliceDefaultItem,
+      PartnersLogoAreaSliceVariation,
+      PartnersLogoAreaSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceDefaultItem,
       TestimonialsSliceWithTitlePrimary,

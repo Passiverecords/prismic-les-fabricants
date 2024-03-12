@@ -1,0 +1,27 @@
+{
+  "id": "partners_logo_area",
+  "type": "SharedSlice",
+  "name": "PartnersLogoArea",
+  "description": "PartnersLogoArea",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "partner_logo": {
+          "type": "Image",
+          "config": {
+            "label": "Partner Logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ]
+}
