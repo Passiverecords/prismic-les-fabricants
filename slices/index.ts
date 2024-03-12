@@ -6,6 +6,7 @@ import { defineSliceZoneComponents } from "@prismicio/vue";
 export const components = defineSliceZoneComponents({
   duet_content: defineAsyncComponent(() => import("./DuetContent/index.vue")),
   hero_banner: defineAsyncComponent(() => import("./HeroBanner/index.vue")),
+  hero_showcase: defineAsyncComponent(() => import("./HeroShowcase/index.vue")),
   partners_logo_area: defineAsyncComponent(
     () => import("./PartnersLogoArea/index.vue"),
   ),

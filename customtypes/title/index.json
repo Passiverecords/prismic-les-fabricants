@@ -1,0 +1,33 @@
+{
+  "format": "custom",
+  "id": "title",
+  "label": "title",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "title",
+          "placeholder": "Le titre"
+        }
+      },
+      "titlelevel": {
+        "type": "Select",
+        "config": {
+          "label": "TitleLevel",
+          "placeholder": "Le niveau de titre ",
+          "options": ["2", "3", "4", "5", "6"],
+          "default_value": "2"
+        }
+      }
+    }
+  }
+}

@@ -20,7 +20,7 @@ useHead({
 </script>
 
 <template>
-  <div class="page wrapper">
+  <div class="page">
     <header>
       <Heading level="1" class="title">{{ page?.data.meta_title }}</Heading>
     </header>

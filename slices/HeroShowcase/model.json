@@ -1,0 +1,76 @@
+{
+  "id": "hero_showcase",
+  "type": "SharedSlice",
+  "name": "HeroShowcase",
+  "description": "HeroShowcase",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "showcasetitle": {
+          "type": "Link",
+          "config": {
+            "label": "Titre du projet",
+            "select": "document",
+            "customtypes": [
+              "title"
+            ]
+          }
+        },
+        "showcasepicture": {
+          "type": "Image",
+          "config": {
+            "label": "Image liée au projet",
+            "constraint": {
+              "width": 1440,
+              "height": 480
+            },
+            "thumbnails": [
+              {
+                "name": "mobile",
+                "width": 360,
+                "height": 120
+              }
+            ]
+          }
+        },
+        "showcaseDescription": {
+          "type": "Text",
+          "config": {
+            "label": "Description du projet",
+            "placeholder": ""
+          }
+        },
+        "showcaseBaseline": {
+          "type": "Text",
+          "config": {
+            "label": "Baseline du projet",
+            "placeholder": ""
+          }
+        },
+        "showcaseLink": {
+          "type": "Link",
+          "config": {
+            "label": "Lien vers le site du projet",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {
+        "showcasetags": {
+          "type": "Text",
+          "config": {
+            "label": "Tags du projet",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

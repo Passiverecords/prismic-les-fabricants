@@ -133,7 +133,7 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-type ShowcaseDocumentDataSlicesSlice = never;
+type ShowcaseDocumentDataSlicesSlice = HeroShowcaseSlice;
 
 /**
  * Content for Showcase documents
@@ -198,10 +198,51 @@ export type ShowcaseDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for title documents
+ */
+interface TitleDocumentData {
+  /**
+   * title field in *title*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Le titre
+   * - **API ID Path**: title.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * TitleLevel field in *title*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Le niveau de titre
+   * - **Default Value**: 2
+   * - **API ID Path**: title.titlelevel
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  titlelevel: prismic.SelectField<"2" | "3" | "4" | "5" | "6", "filled">;
+}
+
+/**
+ * title document from Prismic
+ *
+ * - **API ID**: `title`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TitleDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<TitleDocumentData>, "title", Lang>;
+
 export type AllDocumentTypes =
   | BlogPostDocument
   | HomeDocument
-  | ShowcaseDocument;
+  | ShowcaseDocument
+  | TitleDocument;
 
 /**
  * Primary content in *DuetContent → Primary*
@@ -562,6 +603,106 @@ export type HeroBannerSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *HeroShowcase → Primary*
+ */
+export interface HeroShowcaseSliceDefaultPrimary {
+  /**
+   * Titre du projet field in *HeroShowcase → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_showcase.primary.showcasetitle
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  showcasetitle: prismic.ContentRelationshipField<"title">;
+
+  /**
+   * Image liée au projet field in *HeroShowcase → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_showcase.primary.showcasepicture
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  showcasepicture: prismic.ImageField<"mobile">;
+
+  /**
+   * Description du projet field in *HeroShowcase → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_showcase.primary.showcaseDescription
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  showcaseDescription: prismic.KeyTextField;
+
+  /**
+   * Baseline du projet field in *HeroShowcase → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_showcase.primary.showcaseBaseline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  showcaseBaseline: prismic.KeyTextField;
+
+  /**
+   * Lien vers le site du projet field in *HeroShowcase → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_showcase.primary.showcaseLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  showcaseLink: prismic.LinkField;
+}
+
+/**
+ * Primary content in *HeroShowcase → Items*
+ */
+export interface HeroShowcaseSliceDefaultItem {
+  /**
+   * Tags du projet field in *HeroShowcase → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_showcase.items[].showcasetags
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  showcasetags: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for HeroShowcase Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroShowcaseSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroShowcaseSliceDefaultPrimary>,
+  Simplify<HeroShowcaseSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *HeroShowcase*
+ */
+type HeroShowcaseSliceVariation = HeroShowcaseSliceDefault;
+
+/**
+ * HeroShowcase Shared Slice
+ *
+ * - **API ID**: `hero_showcase`
+ * - **Description**: HeroShowcase
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroShowcaseSlice = prismic.SharedSlice<
+  "hero_showcase",
+  HeroShowcaseSliceVariation
+>;
+
+/**
  * Primary content in *PartnersLogoArea → Items*
  */
 export interface PartnersLogoAreaSliceDefaultItem {
@@ -806,6 +947,8 @@ declare module "@prismicio/client" {
       ShowcaseDocument,
       ShowcaseDocumentData,
       ShowcaseDocumentDataSlicesSlice,
+      TitleDocument,
+      TitleDocumentData,
       AllDocumentTypes,
       DuetContentSlice,
       DuetContentSliceDefaultPrimary,
@@ -822,6 +965,11 @@ declare module "@prismicio/client" {
       HeroBannerSliceVariation,
       HeroBannerSliceDefault,
       HeroBannerSliceWithCallToAction,
+      HeroShowcaseSlice,
+      HeroShowcaseSliceDefaultPrimary,
+      HeroShowcaseSliceDefaultItem,
+      HeroShowcaseSliceVariation,
+      HeroShowcaseSliceDefault,
       PartnersLogoAreaSlice,
       PartnersLogoAreaSliceDefaultItem,
       PartnersLogoAreaSliceVariation,
