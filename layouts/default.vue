@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+    <NuxtLoadingIndicator />
     <SiteHeader />
     <main>
       <slot />

@@ -3,7 +3,7 @@ import { components } from "~/slices";
 
 const prismic = usePrismic();
 const route = useRoute("showcases-showcase_id");
-const { data: page } = useAsyncData(
+const { data: page } = await useAsyncData(
   `[showcase-uid-${route.params.showcase_id}]`,
   () => prismic.client.getByUID("showcase", route.params.showcase_id as string)
 );
