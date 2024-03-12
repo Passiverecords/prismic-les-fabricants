@@ -34,6 +34,7 @@ const title = computed(() => {
     <div
       class="c-duet-content__inner"
       :class="{
+        'text-only': slice.variation === 'textOnly',
         reversed: slice.variation === 'default' && slice.primary.image_first,
       }"
     >
@@ -78,3 +79,81 @@ const title = computed(() => {
     </div>
   </section>
 </template>
+
+<style scoped lang="scss">
+.c-duet-content {
+  container: duet-content / inline-size;
+  .c-duet-content__inner {
+    display: grid;
+    gap: 2.4rem;
+
+    &.reversed {
+      .c-duet-content__panel:first-child {
+        order: 2;
+      }
+    }
+
+    &.text-only {
+      gap: 1.6rem;
+      .title {
+        font-size: clamp(5.4rem, 4.2rem + 3cqi, 7.2rem);
+        margin-block-end: 0;
+        line-height: 1;
+
+        .c-duet-content__subheader {
+          display: block;
+          color: var(--color-blue);
+          font-size: 0.5em;
+          line-height: 1;
+        }
+      }
+    }
+
+    .c-duet-content__content {
+      text-wrap: pretty;
+      font-size: clamp(1.6rem, 1.6rem + 1cqi, 2rem);
+    }
+
+    .title {
+      font-weight: 400;
+      margin-block-start: 0;
+      font-size: clamp(2.4rem, 2.4rem + 2cqi, 4.6rem);
+    }
+
+    .c-duet-content__cta {
+      display: inline-block;
+      color: var(--color-white);
+      background-color: var(--surface-black);
+      padding: 1.2rem 1.4rem;
+      font-size: 1.1em;
+      text-decoration: none;
+      border-radius: 0.6rem;
+      text-align: center;
+      border: solid 1px var(--surface-black);
+      transition: all 200ms linear;
+      &:hover,
+      &:focus-visible {
+        background-color: var(--color-white);
+        color: var(--surface-black);
+      }
+    }
+
+    @container duet-content (min-inline-size: 820px) {
+      display: grid;
+      grid-template-columns: 1.2fr 1.1fr;
+      gap: 3.6rem;
+      padding: 1.6rem;
+
+      .c-duet-content__content {
+        line-height: clamp(150%, calc(150% + 1cqi), 2%);
+      }
+    }
+
+    @container duet-content (min-inline-size: 1140px) {
+      .title {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}
+</style>
