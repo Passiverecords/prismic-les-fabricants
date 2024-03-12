@@ -4,18 +4,7 @@
       <div class="footer__top">
         <div class="footer__top-inner">
           <div>
-            <!-- TODO: remove click event -->
-            <h2
-              @click="
-                navigateTo({
-                  name: 'showcases-showcase_id',
-                  params: { showcase_id: 'happywool' },
-                })
-              "
-              class="title"
-            >
-              Prêt à coopérer ?
-            </h2>
+            <h2 class="title">Prêt à coopérer ?</h2>
             <p>
               Vous cherchez une équipe pour accompagner votre transition
               digitale et incuber vos projets innovants ? Contactez-nous !
