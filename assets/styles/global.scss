@@ -95,6 +95,12 @@
       display: grid;
       gap: 2.4rem;
 
+      &.reversed {
+        .c-duet-content__panel:first-child {
+          order: 2;
+        }
+      }
+
       .c-duet-content__content {
         text-wrap: pretty;
         font-size: clamp(1.6rem, 1.6rem + 1cqi, 2rem);

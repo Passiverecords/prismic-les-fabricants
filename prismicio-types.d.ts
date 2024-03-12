@@ -247,6 +247,17 @@ export interface DuetContentSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * Image First field in *DuetContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: duet_content.primary.image_first
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_first: prismic.BooleanField;
 }
 
 /**
@@ -357,11 +368,71 @@ export type DuetContentSliceWIthCallToAction = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *DuetContent → Primary*
+ */
+export interface DuetContentSliceTextOnlyPrimary {
+  /**
+   * Sub Title field in *DuetContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: duet_content.primary.sub_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sub_title: prismic.KeyTextField;
+
+  /**
+   * Title field in *DuetContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: duet_content.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Title Level field in *DuetContent → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: 2
+   * - **API ID Path**: duet_content.primary.title_level
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  title_level: prismic.SelectField<"2" | "3" | "4" | "5" | "6", "filled">;
+
+  /**
+   * Content field in *DuetContent → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: duet_content.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Text Only variation for DuetContent Slice
+ *
+ * - **API ID**: `textOnly`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DuetContentSliceTextOnly = prismic.SharedSliceVariation<
+  "textOnly",
+  Simplify<DuetContentSliceTextOnlyPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *DuetContent*
  */
 type DuetContentSliceVariation =
   | DuetContentSliceDefault
-  | DuetContentSliceWIthCallToAction;
+  | DuetContentSliceWIthCallToAction
+  | DuetContentSliceTextOnly;
 
 /**
  * DuetContent Shared Slice
@@ -740,9 +811,11 @@ declare module "@prismicio/client" {
       DuetContentSliceDefaultPrimary,
       DuetContentSliceDefaultItem,
       DuetContentSliceWIthCallToActionPrimary,
+      DuetContentSliceTextOnlyPrimary,
       DuetContentSliceVariation,
       DuetContentSliceDefault,
       DuetContentSliceWIthCallToAction,
+      DuetContentSliceTextOnly,
       HeroBannerSlice,
       HeroBannerSliceDefaultPrimary,
       HeroBannerSliceWithCallToActionPrimary,
