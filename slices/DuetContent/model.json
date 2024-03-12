@@ -1,0 +1,132 @@
+{
+  "id": "duet_content",
+  "type": "SharedSlice",
+  "name": "DuetContent",
+  "description": "DuetContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "title_level": {
+          "type": "Select",
+          "config": {
+            "label": "Title Level",
+            "placeholder": "",
+            "options": [
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "default_value": "2"
+          }
+        },
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "highlight_term": {
+          "type": "Text",
+          "config": {
+            "label": "Highlight Term",
+            "placeholder": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "wIthCallToAction",
+      "name": "WIth Call To Action",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "title_level": {
+          "type": "Select",
+          "config": {
+            "label": "Title Level",
+            "placeholder": "",
+            "options": [
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "default_value": "2"
+          }
+        },
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "call_to_action_destination": {
+          "type": "Link",
+          "config": {
+            "label": "Call To Action Destination",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
+        "call_to_action_label": {
+          "type": "Text",
+          "config": {
+            "label": "Call To Action Label",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+@layer base, layouts, components, utils, overrides;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 62.5%;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+
+    --surface-black: rgb(25, 28, 32);
+    --color-white: #ffffff;
+    --color-green-soft: #b7f6dc;
+    --color-gray: #f2f2f2;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  :where(input, textarea, button) {
+    font: inherit;
+    line-height: 1.1;
+  }
+
+  :where(button) {
+    padding: 1rem;
+  }
+
+  :where(button:not(:disabled)) {
+    cursor: pointer;
+  }
+
+  :where(input:not([type="radio"], [type="checkbox"])),
+  :where(textarea) {
+    padding: 1rem;
+  }
+
+  :where(img) {
+    max-inline-size: 100%;
+    display: block;
+  }
+
+  .title {
+    --_title-wght: var(--title-wght, 500);
+    font-family: "Crimson Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: var(--_title-wght);
+    font-style: normal;
+  }
+}
+
+@layer layout {
+  .wrapper {
+    max-inline-size: 1240px;
+    padding-inline: 2.4rem;
+    margin-inline: auto;
+  }
+}
+
+@layer components {
+  .mark {
+    display: inline-block;
+    background-color: var(--color-green-soft);
+    padding-inline: 0.1em;
+    font-style: italic;
+  }
+
+  .flow {
+    --_spacing: var(--spacing, 2.4rem);
+    & > * {
+      margin-block: 0;
+    }
+    & > * + * {
+      margin-block-start: var(--_spacing);
+    }
+  }
+}
+
+@layer components {
+  .c-duet-content {
+    container: duet-content / inline-size;
+    .c-duet-content__inner {
+      display: grid;
+      gap: 2.4rem;
+
+      .c-duet-content__content {
+        text-wrap: pretty;
+        font-size: clamp(1.6rem, 1.6rem + 1cqi, 2rem);
+      }
+
+      .title {
+        font-weight: 400;
+        margin-block-start: 0;
+        font-size: clamp(2.4rem, 2.4rem + 2cqi, 4.6rem);
+      }
+
+      .c-duet-content__cta {
+        display: inline-block;
+        color: var(--color-white);
+        background-color: var(--surface-black);
+        padding: 1.2rem 1.4rem;
+        font-size: 1.1em;
+        text-decoration: none;
+        border-radius: 0.6rem;
+        text-align: center;
+        border: solid 1px var(--surface-black);
+        transition: all 200ms linear;
+        &:hover,
+        &:focus-visible {
+          background-color: var(--color-white);
+          color: var(--surface-black);
+        }
+      }
+
+      @container duet-content (min-inline-size: 820px) {
+        display: grid;
+        grid-template-columns: 1.2fr 1.1fr;
+        gap: 3.6rem;
+        padding: 1.6rem;
+
+        .c-duet-content__content {
+          line-height: clamp(150%, calc(150% + 1cqi), 2%);
+        }
+      }
+
+      @container duet-content (min-inline-size: 1140px) {
+        .title {
+          grid-column: 1 / -1;
+        }
+      }
+    }
+  }
+}
