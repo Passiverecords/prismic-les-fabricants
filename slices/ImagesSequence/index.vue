@@ -29,6 +29,7 @@ defineProps(
           :src="item.image.url"
           :width="item.image.dimensions.width"
           :height="item.image.dimensions.height"
+          sizes="300px"
         />
       </template>
     </div>
