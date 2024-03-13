@@ -1,5 +1,5 @@
 <template>
-  <form id="contact-form" ref="form" @submit.prevent="handle_form">
+  <form id="contact-form" ref="form" method="post" action="/contact">
     <label for="email">Votre email <sup aria-hidden="true">*</sup></label>
     <input required type="email" id="email" name="email" />
     <label for="message">Votre message <sup aria-hidden="true">*</sup></label>
@@ -13,14 +13,6 @@ const form = ref<HTMLFormElement>();
 const emit = defineEmits<{
   (e: "submit_message", message: { email: string; content: string }): void;
 }>();
-
-function handle_form() {
-  const data = new FormData(form.value);
-  emit("submit_message", {
-    content: data.get("message") as string,
-    email: data.get("email") as string,
-  });
-}
 </script>
 
 <style scoped>

@@ -10,7 +10,7 @@
               digitale et incuber vos projets innovants ? Contactez-nous !
             </p>
           </div>
-          <ContactForm @submit_message="handle_message($event)" />
+          <ContactForm ref="form" />
         </div>
       </div>
       <div class="footer__bottom">
@@ -23,10 +23,6 @@
 
 <script lang="ts" setup>
 const year = new Date().getFullYear();
-
-function handle_message(value: any) {
-  console.log(value);
-}
 </script>
 
 <style scoped>
@@ -42,7 +38,7 @@ footer {
   border-block-start: 1px solid rgb(200 200 200 / 0.5);
 }
 
-.footer__top {
+.wrapper {
   container-type: inline-size;
 }
 
@@ -63,6 +59,12 @@ footer {
     display: grid;
     gap: 2.4rem;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__bottom {
+    display: flex;
+    gap: 1.6rem;
+    justify-content: space-between;
   }
 }
 </style>
