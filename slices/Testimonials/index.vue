@@ -45,7 +45,7 @@ function is_long_content(value: RichTextField, limit = 300) {
             class="avatar"
             :alt="item.author_image.alt ?? ''"
             :src="item.author_image.url"
-            sizes="90px"
+            sizes="80px"
           />
           <div>
             <p>{{ item.author_name }}</p>
@@ -66,7 +66,7 @@ section {
 .avatar {
   aspect-ratio: 1;
   width: 100%;
-  max-inline-size: 90px;
+  max-inline-size: 80px;
 }
 
 ul {
@@ -113,7 +113,7 @@ ul {
     }
 
     p {
-      font-size: 0.95em;
+      font-size: 0.9em;
       margin-block: 0;
     }
   }
