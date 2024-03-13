@@ -92,7 +92,7 @@ function next_title_level(
           :height="item.image.dimensions?.height ?? 100"
           :width="item.image.dimensions?.width ?? 0"
           :src="item.image.url"
-          sizes="100vw md:50vw"
+          sizes="100vw md:460px"
         />
       </li>
     </ul>

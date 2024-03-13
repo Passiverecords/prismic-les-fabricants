@@ -30,6 +30,8 @@ defineProps(
           :width="item.image.dimensions.width"
           :height="item.image.dimensions.height"
           sizes="300px"
+          decoding="async"
+          loading="lazy"
         />
       </template>
     </div>
