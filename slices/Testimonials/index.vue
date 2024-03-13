@@ -80,7 +80,7 @@ ul {
 }
 
 .testimonial {
-  font-size: clamp(1.6rem, 1.6rem +0.25cqi, 1.7rem);
+  font-size: clamp(1.6rem, 1.6rem + 0.25cqi, 1.7rem);
   padding: 2.4rem;
   background-color: var(--color-gray);
   border-radius: 8px;
