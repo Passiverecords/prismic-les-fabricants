@@ -36,7 +36,7 @@ useSeoMeta({
 
 <style scoped>
 .page {
-  padding-block: 2.4rem 6.4rem;
+  padding-block: 2.4rem 14rem;
   container: page-wrapper / inline-size;
 }
 

@@ -75,6 +75,7 @@ defineProps(
   :deep(img) {
     aspect-ratio: 3 / 4;
     object-fit: cover;
+    max-height: 300px;
   }
 }
 
@@ -82,6 +83,7 @@ defineProps(
   .pictures-sequence__inner {
     grid-template-columns: repeat(5, 1fr);
     gap: clamp(2.4rem, 2.4rem + 1vw, 3.6rem);
+    max-inline-size: 1240px;
   }
   .picture:nth-child(4),
   .picture:nth-child(5) {

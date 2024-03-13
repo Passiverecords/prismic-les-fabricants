@@ -70,6 +70,7 @@ export type BlogPostDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | ImagesSequenceSlice
   | ProjectsListSlice
   | PartnersLogoAreaSlice
   | TestimonialsSlice
