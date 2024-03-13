@@ -2,7 +2,7 @@
   <div class="layout">
     <NuxtLoadingIndicator />
     <SiteHeader />
-    <main>
+    <main ref="main_element" tabindex="-1">
       <slot />
     </main>
     <SiteFooter />
@@ -11,6 +11,8 @@
 
 <script lang="ts" setup>
 const config = useAppConfig();
+const router = useRouter();
+const main_element = ref<HTMLElement>();
 
 function generate_title(value?: string): string {
   return `${value ?? "Document sans titre"} | ${config.name}`;
@@ -30,6 +32,16 @@ useHead({
     },
   ],
 });
+
+router.afterEach((to, from) => {
+  if (to.fullPath !== from.fullPath) {
+    main_element.value?.focus?.({ preventScroll: true });
+  }
+});
 </script>
 
-<style scoped></style>
+<style scoped>
+main {
+  outline: none;
+}
+</style>
