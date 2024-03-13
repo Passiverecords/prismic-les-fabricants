@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   experimental: {
     typedPages: true,
   },
-  modules: ["@nuxtjs/prismic"],
+  modules: ["@nuxtjs/prismic", "@nuxt/image"],
   app: {
     pageTransition: {
       name: "fade",
@@ -28,5 +28,8 @@ export default defineNuxtConfig({
   },
   prismic: {
     endpoint: "blokche-les-fabricants",
+  },
+  image: {
+    prismic: {},
   },
 });

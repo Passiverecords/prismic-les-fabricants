@@ -62,6 +62,15 @@ function next_title_level(
         >
         <p>{{ item.short_description }}</p>
         <PrismicImage :field="item.image"></PrismicImage>
+        <NuxtPicture
+          class="picture"
+          v-if="item.image.url"
+          :alt="item.image.alt ?? ''"
+          format="avif,webp"
+          :height="item.image.dimensions?.height ?? 100"
+          :width="item.image.dimensions?.width ?? 0"
+          :src="item.image.url"
+        />
       </li>
     </ul>
     <ul v-if="slice.variation === 'withLinks'">
@@ -75,7 +84,15 @@ function next_title_level(
           </PrismicLink>
         </Heading>
         <p>{{ item.short_description }}</p>
-        <PrismicImage :field="item.image"></PrismicImage>
+        <NuxtPicture
+          class="picture"
+          v-if="item.image.url"
+          :alt="item.image.alt ?? ''"
+          format="avif,webp"
+          :height="item.image.dimensions?.height ?? 100"
+          :width="item.image.dimensions?.width ?? 0"
+          :src="item.image.url"
+        />
       </li>
     </ul>
   </section>
@@ -84,6 +101,10 @@ function next_title_level(
 <style lang="scss" scoped>
 section {
   container: project-container / inline-size;
+}
+
+.picture :deep(img) {
+  height: auto;
 }
 
 .heading {

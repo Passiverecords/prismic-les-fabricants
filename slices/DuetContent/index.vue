@@ -65,7 +65,14 @@ const title = computed(() => {
       </div>
       <template v-if="slice.variation !== 'textOnly'">
         <div class="c-duet-content__panel">
-          <PrismicImage :field="slice.primary.image" />
+          <NuxtPicture
+            class="picture"
+            :alt="slice.primary.image.alt ?? ''"
+            :src="slice.primary.image.url ?? ''"
+            :width="slice.primary.image.dimensions?.width ?? 100"
+            :height="slice.primary.image.dimensions?.height ?? 100"
+            format="avif,webp"
+          />
         </div>
       </template>
       <template v-else>
@@ -81,6 +88,9 @@ const title = computed(() => {
 </template>
 
 <style scoped lang="scss">
+.picture :deep(img) {
+  height: auto;
+}
 .c-duet-content {
   container: duet-content / inline-size;
   .c-duet-content__inner {
