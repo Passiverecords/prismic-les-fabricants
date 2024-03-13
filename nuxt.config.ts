@@ -12,7 +12,11 @@ export default defineNuxtConfig({
       mode: "out-in",
     },
     head: {
+      htmlAttrs: {
+        lang: "fr",
+      },
       link: [
+        { href: "https://images.prismic.io", rel: "preconnect" },
         { href: "https://fonts.googleapis.com", rel: "preconnect" },
         {
           href: "https://fonts.gstatic.com",
