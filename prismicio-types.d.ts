@@ -748,6 +748,181 @@ export type PartnersLogoAreaSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ProjectsList → Primary*
+ */
+export interface ProjectsListSliceDefaultPrimary {
+  /**
+   * Title field in *ProjectsList → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_list.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Highlight Terms field in *ProjectsList → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Comma separated terms you want to highlight
+   * - **API ID Path**: projects_list.primary.highlight_terms
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  highlight_terms: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ProjectsList → Items*
+ */
+export interface ProjectsListSliceDefaultItem {
+  /**
+   * Title field in *ProjectsList → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_list.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Short Description field in *ProjectsList → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_list.items[].short_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  short_description: prismic.KeyTextField;
+
+  /**
+   * Image field in *ProjectsList → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_list.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ProjectsList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsListSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectsListSliceDefaultPrimary>,
+  Simplify<ProjectsListSliceDefaultItem>
+>;
+
+/**
+ * Primary content in *ProjectsList → Primary*
+ */
+export interface ProjectsListSliceWithLinksPrimary {
+  /**
+   * Title field in *ProjectsList → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_list.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Highlight Terms field in *ProjectsList → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Comma separated terms you want to highlight
+   * - **API ID Path**: projects_list.primary.highlight_terms
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  highlight_terms: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ProjectsList → Items*
+ */
+export interface ProjectsListSliceWithLinksItem {
+  /**
+   * Title field in *ProjectsList → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_list.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Short Description field in *ProjectsList → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_list.items[].short_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  short_description: prismic.KeyTextField;
+
+  /**
+   * Image field in *ProjectsList → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_list.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *ProjectsList → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Lien vers une ressource / un projet
+   * - **API ID Path**: projects_list.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * With Links variation for ProjectsList Slice
+ *
+ * - **API ID**: `withLinks`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsListSliceWithLinks = prismic.SharedSliceVariation<
+  "withLinks",
+  Simplify<ProjectsListSliceWithLinksPrimary>,
+  Simplify<ProjectsListSliceWithLinksItem>
+>;
+
+/**
+ * Slice variation for *ProjectsList*
+ */
+type ProjectsListSliceVariation =
+  | ProjectsListSliceDefault
+  | ProjectsListSliceWithLinks;
+
+/**
+ * ProjectsList Shared Slice
+ *
+ * - **API ID**: `projects_list`
+ * - **Description**: ProjectsList
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsListSlice = prismic.SharedSlice<
+  "projects_list",
+  ProjectsListSliceVariation
+>;
+
+/**
  * Primary content in *Testimonials → Items*
  */
 export interface TestimonialsSliceDefaultItem {
@@ -974,6 +1149,14 @@ declare module "@prismicio/client" {
       PartnersLogoAreaSliceDefaultItem,
       PartnersLogoAreaSliceVariation,
       PartnersLogoAreaSliceDefault,
+      ProjectsListSlice,
+      ProjectsListSliceDefaultPrimary,
+      ProjectsListSliceDefaultItem,
+      ProjectsListSliceWithLinksPrimary,
+      ProjectsListSliceWithLinksItem,
+      ProjectsListSliceVariation,
+      ProjectsListSliceDefault,
+      ProjectsListSliceWithLinks,
       TestimonialsSlice,
       TestimonialsSliceDefaultItem,
       TestimonialsSliceWithTitlePrimary,

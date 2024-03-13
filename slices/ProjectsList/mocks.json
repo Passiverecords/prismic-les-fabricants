@@ -1,0 +1,256 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"highlight_terms": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "ambitieux, novateurs"
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Toujours plus de projets ambitieux et novateurs"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Un titre pour la carte"
+						}
+					],
+					[
+						"image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+								"width": 6000,
+								"height": 4000
+							},
+							"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+							"width": 6000,
+							"height": 4000,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"short_description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Une brève description"
+						}
+					]
+				]
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withLinks",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "20 ans de projets réussis."
+			},
+			"highlight_terms": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "réussis"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"origin": {
+								"id": "8ZGgg6rhzxs",
+								"url": "https://images.unsplash.com/photo-1592187270271-9a4b84faa228?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTAyNTIwMTV8MA&ixlib=rb-4.0.3&q=85",
+								"width": 4000,
+								"height": 6000
+							},
+							"url": "https://images.unsplash.com/photo-1592187270271-9a4b84faa228?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTAyNTIwMTV8MA&ixlib=rb-4.0.3&q=85",
+							"width": 4000,
+							"height": 6000,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"alt": "sliced orange fruit on blue surface",
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://prismic.io"
+							}
+						}
+					],
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "IDKIDS"
+						}
+					],
+					[
+						"short_description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "IDTROC : L’app de revente de vêtements de seconde main"
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Phildar"
+						}
+					],
+					[
+						"short_description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Le site et l’app Happywool pour les accrocs du crochet"
+						}
+					],
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw5fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTAyNTIwMTV8MA&ixlib=rb-4.0.3&q=85",
+							"alt": "sliced orange fruit on white ceramic plate",
+							"origin": {
+								"id": "pCjw_ygKCv0",
+								"url": "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw5fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTAyNTIwMTV8MA&ixlib=rb-4.0.3&q=85",
+								"width": 3648,
+								"height": 5472
+							},
+							"width": 3648,
+							"height": 5472,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://slicemachine.dev"
+							}
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Interreg"
+						}
+					],
+					[
+						"short_description",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "La plateforme de collaboration interrégionale en Europe"
+						}
+					],
+					[
+						"image",
+						{
+							"url": "https://images.unsplash.com/photo-1616679312958-a86d9539afae?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTAyNTIwMTV8MA&ixlib=rb-4.0.3&q=85",
+							"alt": "orange fruit on white ceramic plate",
+							"origin": {
+								"id": "Jr7t5QviCDM",
+								"url": "https://images.unsplash.com/photo-1616679312958-a86d9539afae?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTAyNTIwMTV8MA&ixlib=rb-4.0.3&q=85",
+								"width": 3024,
+								"height": 4032
+							},
+							"width": 3024,
+							"height": 4032,
+							"edit": {
+								"background": "transparent",
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								}
+							},
+							"credits": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					]
+				]
+			}
+		]
+	}
+]

@@ -1,0 +1,113 @@
+{
+  "id": "projects_list",
+  "type": "SharedSlice",
+  "name": "ProjectsList",
+  "description": "ProjectsList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "highlight_terms": {
+          "type": "Text",
+          "config": {
+            "label": "Highlight Terms",
+            "placeholder": "Comma separated terms you want to highlight"
+          }
+        }
+      },
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "short_description": {
+          "type": "Text",
+          "config": {
+            "label": "Short Description",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    },
+    {
+      "id": "withLinks",
+      "name": "With Links",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "highlight_terms": {
+          "type": "Text",
+          "config": {
+            "label": "Highlight Terms",
+            "placeholder": "Comma separated terms you want to highlight"
+          }
+        }
+      },
+      "items": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "short_description": {
+          "type": "Text",
+          "config": {
+            "label": "Short Description",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "Lien vers une ressource / un projet",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}
