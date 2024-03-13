@@ -1,0 +1,27 @@
+{
+  "id": "images_sequence",
+  "type": "SharedSlice",
+  "name": "ImagesSequence",
+  "description": "ImagesSequence",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -704,6 +704,51 @@ export type HeroShowcaseSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ImagesSequence → Items*
+ */
+export interface ImagesSequenceSliceDefaultItem {
+  /**
+   * image field in *ImagesSequence → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: images_sequence.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ImagesSequence Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImagesSequenceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<ImagesSequenceSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ImagesSequence*
+ */
+type ImagesSequenceSliceVariation = ImagesSequenceSliceDefault;
+
+/**
+ * ImagesSequence Shared Slice
+ *
+ * - **API ID**: `images_sequence`
+ * - **Description**: ImagesSequence
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImagesSequenceSlice = prismic.SharedSlice<
+  "images_sequence",
+  ImagesSequenceSliceVariation
+>;
+
+/**
  * Primary content in *PartnersLogoArea → Items*
  */
 export interface PartnersLogoAreaSliceDefaultItem {
@@ -1168,6 +1213,10 @@ declare module "@prismicio/client" {
       HeroShowcaseSliceDefaultItem,
       HeroShowcaseSliceVariation,
       HeroShowcaseSliceDefault,
+      ImagesSequenceSlice,
+      ImagesSequenceSliceDefaultItem,
+      ImagesSequenceSliceVariation,
+      ImagesSequenceSliceDefault,
       PartnersLogoAreaSlice,
       PartnersLogoAreaSliceDefaultItem,
       PartnersLogoAreaSliceVariation,

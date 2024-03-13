@@ -15,7 +15,7 @@
 
 <style scoped>
 header {
-  padding-block: 2.4rem;
+  padding-block: 3.6rem;
 }
 
 nav {
@@ -23,6 +23,7 @@ nav {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 1.6rem;
 }
 
 .contact-anchor {
