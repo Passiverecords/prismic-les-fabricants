@@ -72,6 +72,7 @@ const title = computed(() => {
             :width="slice.primary.image.dimensions?.width ?? 100"
             :height="slice.primary.image.dimensions?.height ?? 100"
             format="avif,webp"
+            sizes="100vw md:50vw"
           />
         </div>
       </template>

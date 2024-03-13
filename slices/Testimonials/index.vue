@@ -40,7 +40,13 @@ function is_long_content(value: RichTextField, limit = 300) {
       >
         <PrismicRichText class="content" :field="item.content" />
         <footer>
-          <PrismicImage class="avatar" :field="item.author_image" />
+          <NuxtImg
+            v-if="item.author_image.url"
+            class="avatar"
+            :alt="item.author_image.alt ?? ''"
+            :src="item.author_image.url"
+            sizes="90px"
+          />
           <div>
             <p>{{ item.author_name }}</p>
             <p>{{ item.author_role }}</p>
