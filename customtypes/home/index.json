@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "projects_list": {
+              "type": "SharedSlice"
+            },
             "partners_logo_area": {
               "type": "SharedSlice"
             },

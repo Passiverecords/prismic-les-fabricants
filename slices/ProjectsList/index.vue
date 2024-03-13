@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Heading } from "#build/components";
 import { type Content } from "@prismicio/client";
 
 // The array passed to `getSliceComponentProps` is purely optional.
@@ -22,10 +23,26 @@ const title = computed(() => {
   return term.length > 0
     ? slice.value.primary.title?.replaceAll(
         new RegExp(`${term.join("|")}`, "gi"),
-        "<span class='mark'>$&</span>"
+        "<br /><span class='mark'>$&</span>"
       )
     : slice.value.primary.title;
 });
+
+function next_title_level(
+  level: InstanceType<typeof Heading>["$props"]["level"]
+): InstanceType<typeof Heading>["$props"]["level"] {
+  return (
+    (
+      {
+        1: 2,
+        2: 3,
+        3: 4,
+        4: 5,
+        5: 6,
+      } as any
+    )[level ?? 2] ?? 2
+  );
+}
 </script>
 
 <template>
@@ -33,39 +50,92 @@ const title = computed(() => {
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <Heading class="heading" level="2"><span v-html="title"></span></Heading>
+    <Heading class="heading" :level="slice.primary.niveau_de_titre"
+      ><span v-html="title"></span
+    ></Heading>
     <ul v-if="slice.variation === 'default'">
       <li v-for="item of slice.items">
-        <p class="title">{{ item.title }}</p>
+        <Heading
+          :level="next_title_level(slice.primary.niveau_de_titre)"
+          class="title project-title"
+          >{{ item.title }}</Heading
+        >
         <p>{{ item.short_description }}</p>
         <PrismicImage :field="item.image"></PrismicImage>
       </li>
     </ul>
     <ul v-if="slice.variation === 'withLinks'">
       <li v-for="item of slice.items">
-        <PrismicLink :field="item.link">
-          <p class="title">{{ item.title }}</p>
-          <p>{{ item.short_description }}</p>
-          <PrismicImage :field="item.image"></PrismicImage>
-        </PrismicLink>
+        <Heading
+          :level="next_title_level(slice.primary.niveau_de_titre)"
+          class="title project-title"
+        >
+          <PrismicLink :field="item.link">
+            {{ item.title }}
+          </PrismicLink>
+        </Heading>
+        <p>{{ item.short_description }}</p>
+        <PrismicImage :field="item.image"></PrismicImage>
       </li>
     </ul>
   </section>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 section {
-  padding: 2.4rem;
   container: project-container / inline-size;
 }
 
 .heading {
-  font-size: clamp(2.4rem, 2.4rem + 1cqi, 4.8rem);
+  font-size: clamp(3.6rem, 3.6rem + 6cqi, 9.6rem);
+  margin-block-start: 3.6rem;
+  margin-block-end: 3.6rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    inset: 0;
+  }
+}
+
+.project-title {
+  margin: 0;
+  font-size: clamp(2.6rem, 2.6rem + 1cqi, 3.6rem);
+}
+
+li {
+  position: relative;
 }
 
 ul {
   margin: 0;
   padding: 0;
+  display: grid;
+  gap: 3.6rem;
   list-style: none;
+}
+
+img {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+@container project-container (min-inline-size: 680px) {
+  ul {
+    margin-block-start: 10rem;
+    gap: 5.6rem clamp(2.4rem, 2.4rem + 2cqi, 5.2rem);
+    grid-template-columns: repeat(2, 1fr);
+    max-inline-size: 960px;
+    margin-inline: auto;
+
+    li:nth-child(2n) {
+      transform: translateY(-4.2rem);
+    }
+  }
 }
 </style>

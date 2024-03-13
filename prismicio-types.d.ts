@@ -70,6 +70,7 @@ export type BlogPostDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | ProjectsListSlice
   | PartnersLogoAreaSlice
   | TestimonialsSlice
   | DuetContentSlice;
@@ -770,6 +771,17 @@ export interface ProjectsListSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   highlight_terms: prismic.KeyTextField;
+
+  /**
+   * Niveau de titre field in *ProjectsList → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Niveau de titre
+   * - **Default Value**: 2
+   * - **API ID Path**: projects_list.primary.niveau_de_titre
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  niveau_de_titre: prismic.SelectField<"2" | "3" | "4" | "5", "filled">;
 }
 
 /**
@@ -843,6 +855,17 @@ export interface ProjectsListSliceWithLinksPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   highlight_terms: prismic.KeyTextField;
+
+  /**
+   * Niveau de titre field in *ProjectsList → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Niveau de titre
+   * - **Default Value**: 2
+   * - **API ID Path**: projects_list.primary.niveau_de_titre
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  niveau_de_titre: prismic.SelectField<"2" | "3" | "4" | "5", "filled">;
 }
 
 /**

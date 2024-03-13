@@ -12,6 +12,11 @@
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "Toujours plus de projets ambitieux et novateurs"
+			},
+			"niveau_de_titre": {
+				"__TYPE__": "FieldContent",
+				"value": "2",
+				"type": "Select"
 			}
 		},
 		"items": [
@@ -77,6 +82,11 @@
 				"__TYPE__": "FieldContent",
 				"type": "Text",
 				"value": "réussis"
+			},
+			"niveau_de_titre": {
+				"__TYPE__": "FieldContent",
+				"value": "2",
+				"type": "Select"
 			}
 		},
 		"items": [

@@ -1,5 +1,5 @@
 <template>
-  <form ref="form" @submit.prevent="handle_form">
+  <form id="contact-form" ref="form" @submit.prevent="handle_form">
     <label for="email">Votre email <sup aria-hidden="true">*</sup></label>
     <input required type="email" id="email" name="email" />
     <label for="message">Votre message <sup aria-hidden="true">*</sup></label>

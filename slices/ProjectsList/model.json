@@ -25,6 +25,20 @@
             "label": "Highlight Terms",
             "placeholder": "Comma separated terms you want to highlight"
           }
+        },
+        "niveau_de_titre": {
+          "type": "Select",
+          "config": {
+            "label": "Niveau de titre",
+            "placeholder": "Niveau de titre",
+            "options": [
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "default_value": "2"
+          }
         }
       },
       "items": {
@@ -72,6 +86,20 @@
           "config": {
             "label": "Highlight Terms",
             "placeholder": "Comma separated terms you want to highlight"
+          }
+        },
+        "niveau_de_titre": {
+          "type": "Select",
+          "config": {
+            "label": "Niveau de titre",
+            "placeholder": "Niveau de titre",
+            "options": [
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "default_value": "2"
           }
         }
       },
