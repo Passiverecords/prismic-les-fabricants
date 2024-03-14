@@ -23,11 +23,8 @@ defineProps(
       class="break-through"
       :width="slice.primary.showcasepicture.dimensions?.width"
       :height="slice.primary.showcasepicture.dimensions?.height"
-      loading="eager"
-      decoding="async"
       sizes="100vw"
       :src="slice.primary.showcasepicture.url"
-      format="avif,webp"
       :alt="slice.primary.showcasepicture.alt ?? ''"
     />
 
