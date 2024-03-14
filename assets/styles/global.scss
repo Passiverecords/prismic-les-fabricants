@@ -101,6 +101,11 @@
     display: block;
   }
 
+  :where(a) {
+    color: inherit;
+    text-underline-offset: 0.3rem;
+  }
+
   .title {
     --_title-wght: var(--title-wght, 500);
     font-family: "Crimson Pro", serif;
@@ -155,6 +160,29 @@
 }
 
 @layer components {
+  .c-pills {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.8rem;
+  }
+  .c-pill {
+    text-transform: uppercase;
+    color: var(--color-white);
+    font-size: 0.825em;
+    display: inline-block;
+    padding: 0.4rem 1.6rem;
+    border-radius: 100vw;
+    text-decoration: none;
+    background-color: var(--surface-black);
+    color: var(--color-white);
+    border: solid 1px var(--surface-black);
+    transition: all 140ms linear;
+    &:hover,
+    &:focus-visible {
+      background-color: var(--color-white);
+      color: var(--surface-black);
+    }
+  }
 }
 
 @layer utils {

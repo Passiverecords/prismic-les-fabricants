@@ -1,5 +1,5 @@
 {
-  "format": "page",
+  "format": "custom",
   "id": "blog_post",
   "label": "Blog Post",
   "repeatable": true,
@@ -20,15 +20,6 @@
           "customtypes": ["author"]
         }
       },
-      "content": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Content",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
       "categories": {
         "type": "Group",
         "config": {
@@ -38,7 +29,7 @@
             "category": {
               "type": "Link",
               "config": {
-                "label": "Categorie",
+                "label": "Category",
                 "select": "document",
                 "customtypes": ["blog_categories"]
               }
@@ -46,39 +37,53 @@
           }
         }
       },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
+      "title": {
+        "type": "Text",
         "config": {
-          "choices": {}
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "hero_image": {
+        "type": "Image",
+        "config": {
+          "label": "Hero Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "content": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Content",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       }
     },
-    "SEO & Metadata": {
+    "Metadata": {
       "meta_description": {
+        "type": "Text",
         "config": {
-          "label": "Meta Description",
-          "placeholder": "A brief summary of the page"
-        },
-        "type": "Text"
+          "label": "Description",
+          "placeholder": ""
+        }
       },
-      "meta_image": {
+      "social_image": {
+        "type": "Image",
         "config": {
-          "constraint": {
-            "height": 1260,
-            "width": 2400
-          },
-          "label": "Meta Image",
+          "label": "Social image",
+          "constraint": {},
           "thumbnails": []
-        },
-        "type": "Image"
+        }
       },
-      "meta_title": {
+      "keywords": {
+        "type": "Text",
         "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
-        },
-        "type": "Text"
+          "label": "Keywords",
+          "placeholder": "Comma separated keywords"
+        }
       }
     }
   }

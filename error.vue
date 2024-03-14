@@ -7,9 +7,7 @@
             La page à cette adresse semble ne pas / plus exister...
           </h1>
         </header>
-        <NuxtLink @click="clearError({ redirect: '/' })" to="/"
-          >Retourner en lieu sûr</NuxtLink
-        >
+        <NuxtLink @click="clear()" to="/">Retourner en lieu sûr</NuxtLink>
       </template>
     </div>
   </NuxtLayout>
@@ -18,7 +16,25 @@
 <script setup lang="ts">
 import type { NuxtError } from "#app";
 
-defineProps<{ error: NuxtError }>();
+const props = defineProps<{ error: NuxtError }>();
+const { error } = toRefs(props);
+
+function clear() {
+  clearError();
+}
+
+const title = computed(() => {
+  switch (error.value.statusCode) {
+    case 404:
+      return "Page introuvable";
+    default:
+      return "Une erreur est survenue";
+  }
+});
+
+useSeoMeta({
+  title,
+});
 </script>
 
 <style scoped>

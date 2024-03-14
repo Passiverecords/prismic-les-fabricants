@@ -140,7 +140,7 @@ export type BlogCategoriesDocument<Lang extends string = string> =
  */
 export interface BlogPostDocumentDataCategoriesItem {
   /**
-   * Categorie field in *Blog Post → Categories*
+   * Category field in *Blog Post → Categories*
    *
    * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
@@ -149,8 +149,6 @@ export interface BlogPostDocumentDataCategoriesItem {
    */
   category: prismic.ContentRelationshipField<"blog_categories">;
 }
-
-type BlogPostDocumentDataSlicesSlice = never;
 
 /**
  * Content for Blog Post documents
@@ -168,17 +166,6 @@ interface BlogPostDocumentData {
   author: prismic.ContentRelationshipField<"author">;
 
   /**
-   * Content field in *Blog Post*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.content
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-
-  /**
    * Categories field in *Blog Post*
    *
    * - **Field Type**: Group
@@ -190,46 +177,68 @@ interface BlogPostDocumentData {
   categories: prismic.GroupField<Simplify<BlogPostDocumentDataCategoriesItem>>;
 
   /**
-   * Slice Zone field in *Blog Post*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<BlogPostDocumentDataSlicesSlice> /**
-   * Meta Description field in *Blog Post*
+   * Title field in *Blog Post*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Hero Image field in *Blog Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.hero_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image: prismic.ImageField<never>;
+
+  /**
+   * Content field in *Blog Post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.content
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField /**
+   * Description field in *Blog Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
    * - **API ID Path**: blog_post.meta_description
-   * - **Tab**: SEO & Metadata
+   * - **Tab**: Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Blog Post*
+   * Social image field in *Blog Post*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.meta_image
-   * - **Tab**: SEO & Metadata
+   * - **API ID Path**: blog_post.social_image
+   * - **Tab**: Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  meta_image: prismic.ImageField<never>;
+  social_image: prismic.ImageField<never>;
 
   /**
-   * Meta Title field in *Blog Post*
+   * Keywords field in *Blog Post*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: blog_post.meta_title
-   * - **Tab**: SEO & Metadata
+   * - **Placeholder**: Comma separated keywords
+   * - **API ID Path**: blog_post.keywords
+   * - **Tab**: Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  meta_title: prismic.KeyTextField;
+  keywords: prismic.KeyTextField;
 }
 
 /**
@@ -1371,7 +1380,6 @@ declare module "@prismicio/client" {
       BlogPostDocument,
       BlogPostDocumentData,
       BlogPostDocumentDataCategoriesItem,
-      BlogPostDocumentDataSlicesSlice,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
