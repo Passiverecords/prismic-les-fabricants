@@ -18,14 +18,9 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <NuxtImg
-      v-if="slice.primary.showcasepicture.url"
+    <PrismicImage
+      :field="slice.primary.showcasepicture"
       class="break-through"
-      :width="slice.primary.showcasepicture.dimensions?.width"
-      :height="slice.primary.showcasepicture.dimensions?.height"
-      sizes="100vw"
-      :src="slice.primary.showcasepicture.url"
-      :alt="slice.primary.showcasepicture.alt ?? ''"
     />
 
     <div class="showcase-content">
