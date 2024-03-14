@@ -8,19 +8,14 @@ const { data: page } = await useAsyncData(
   () => prismic.client.getByUID("showcase", route.params.showcase_id as string)
 );
 
-useHead({
+useSeoMeta({
   title: page.value?.data.meta_title,
-  meta: [
-    {
-      name: "description",
-      content: page.value?.data.meta_description,
-    },
-  ],
+  description: page.value?.data.meta_description,
 });
 </script>
 
 <template>
-  <div class="page">
+  <div class="page wrapper">
     <header>
       <Heading level="1" class="title">{{ page?.data.meta_title }}</Heading>
     </header>
@@ -31,3 +26,9 @@ useHead({
     />
   </div>
 </template>
+
+<style scoped>
+.page {
+  margin-block-end: 10rem;
+}
+</style>
