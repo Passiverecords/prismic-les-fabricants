@@ -3,15 +3,18 @@
     <div class="wrapper">
       <nav>
         <NuxtLink to="/">
-          <img src="/les-fabricants-logo-black.svg" alt="Les Fabricants" />
+          <img
+            width="227"
+            height="41"
+            src="/les-fabricants-logo-black.svg"
+            alt="Les Fabricants"
+          />
         </NuxtLink>
-        <a class="contact-anchor" href="#contact-form">Contact</a>
+        <a class="c-call-to-action" href="#contact-form">Contact</a>
       </nav>
     </div>
   </header>
 </template>
-
-<script lang="ts" setup></script>
 
 <style scoped>
 header {
@@ -24,21 +27,5 @@ nav {
   justify-content: space-between;
   align-items: center;
   gap: 1.6rem;
-}
-
-.contact-anchor {
-  display: inline-block;
-  padding: 0.6rem 1.6rem;
-  font-size: 1.8rem;
-  text-decoration: none;
-  color: var(--color-white);
-  background-color: var(--surface-black);
-  border-radius: 6px;
-  border: solid 1px var(--surface-black);
-  &:hover,
-  &:focus-visible {
-    background-color: var(--color-white);
-    color: var(--surface-black);
-  }
 }
 </style>

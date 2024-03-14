@@ -6,6 +6,11 @@ export default defineNuxtConfig({
     typedPages: true,
   },
   modules: ["@nuxtjs/prismic", "@nuxt/image"],
+  nitro: {
+    prerender: {
+      ignore: ["/preview", "/slice-simulator"],
+    },
+  },
   app: {
     pageTransition: {
       name: "fade",
@@ -22,10 +27,6 @@ export default defineNuxtConfig({
           href: "https://fonts.gstatic.com",
           rel: "preconnect",
           crossorigin: "anonymous",
-        },
-        {
-          href: "https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap",
-          rel: "stylesheet",
         },
       ],
     },

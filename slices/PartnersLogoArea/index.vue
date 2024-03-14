@@ -20,11 +20,18 @@ defineProps(
   >
     <div class="partners-area">
       <div class="partners-area__grid">
-        <PrismicImage
-          class="partners-area__img"
-          v-for="image in slice.items"
-          :field="image.partner_logo"
-        />
+        <template v-for="image in slice.items">
+          <NuxtPicture
+            class="picture"
+            v-if="image.partner_logo.url"
+            :alt="image.partner_logo.alt ?? ''"
+            decoding="async"
+            :src="image.partner_logo.url"
+            :width="image.partner_logo.dimensions.width"
+            :height="image.partner_logo.dimensions.height"
+            :img-attrs="{ class: 'partners-area__img' }"
+          />
+        </template>
       </div>
     </div>
   </section>
@@ -36,13 +43,14 @@ defineProps(
   padding: 3.2rem;
 }
 
-.partners-area__img {
+:deep(.partners-area__img) {
   filter: grayscale(1);
   opacity: 0.4;
   transition: all 200ms linear;
+  height: auto;
 }
 
-.partners-area__img:hover {
+:deep(.partners-area__img:hover) {
   filter: grayscale(0);
   opacity: 0.9;
 }

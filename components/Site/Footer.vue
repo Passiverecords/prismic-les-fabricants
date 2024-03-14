@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <img src="/fabricants-logo-white.svg" alt="" />
+        <img width="170" height="26" src="/fabricants-logo-white.svg" alt="" />
         <p>Copyright @ {{ year }} Les Fabricants. Tous droits réservés.</p>
       </div>
     </div>

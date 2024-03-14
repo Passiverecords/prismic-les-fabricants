@@ -56,7 +56,7 @@ const title = computed(() => {
           <PrismicLink
             width="90"
             height="90"
-            class="c-duet-content__cta"
+            class="c-call-to-action"
             :field="slice.primary.call_to_action_destination"
           >
             {{ slice.primary.call_to_action_label }}
@@ -129,24 +129,6 @@ const title = computed(() => {
       font-weight: 400;
       margin-block-start: 0;
       font-size: clamp(2.4rem, 2.4rem + 2cqi, 4.6rem);
-    }
-
-    .c-duet-content__cta {
-      display: inline-block;
-      color: var(--color-white);
-      background-color: var(--surface-black);
-      padding: 1.2rem 1.4rem;
-      font-size: 1.1em;
-      text-decoration: none;
-      border-radius: 0.6rem;
-      text-align: center;
-      border: solid 1px var(--surface-black);
-      transition: all 200ms linear;
-      &:hover,
-      &:focus-visible {
-        background-color: var(--color-white);
-        color: var(--surface-black);
-      }
     }
 
     @container duet-content (min-inline-size: 820px) {
