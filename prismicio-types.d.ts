@@ -4,12 +4,191 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Item in *Author → Social Links*
+ */
+export interface AuthorDocumentDataSocialLinksItem {
+  /**
+   * Type field in *Author → Social Links*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.social_links[].type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  type: prismic.SelectField<
+    "twitter / x" | "linkedin" | "mastodon" | "personal website"
+  >;
+
+  /**
+   * Link field in *Author → Social Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.social_links[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Content for Author documents
+ */
+interface AuthorDocumentData {
+  /**
+   * Firstname field in *Author*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.firstname
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  firstname: prismic.KeyTextField;
+
+  /**
+   * Lastname field in *Author*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.lastname
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  lastname: prismic.KeyTextField;
+
+  /**
+   * biography field in *Author*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.biography
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  biography: prismic.RichTextField;
+
+  /**
+   * Avatar field in *Author*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.avatar
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  avatar: prismic.ImageField<never>;
+
+  /**
+   * Social Links field in *Author*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.social_links[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  social_links: prismic.GroupField<Simplify<AuthorDocumentDataSocialLinksItem>>;
+}
+
+/**
+ * Author document from Prismic
+ *
+ * - **API ID**: `author`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AuthorDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
+
+/**
+ * Content for Blog Categories documents
+ */
+interface BlogCategoriesDocumentData {
+  /**
+   * label field in *Blog Categories*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_categories.label
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Blog Categories document from Prismic
+ *
+ * - **API ID**: `blog_categories`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogCategoriesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<BlogCategoriesDocumentData>,
+    "blog_categories",
+    Lang
+  >;
+
+/**
+ * Item in *Blog Post → Categories*
+ */
+export interface BlogPostDocumentDataCategoriesItem {
+  /**
+   * Categorie field in *Blog Post → Categories*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.categories[].category
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  category: prismic.ContentRelationshipField<"blog_categories">;
+}
+
 type BlogPostDocumentDataSlicesSlice = never;
 
 /**
  * Content for Blog Post documents
  */
 interface BlogPostDocumentData {
+  /**
+   * Author field in *Blog Post*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.author
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  author: prismic.ContentRelationshipField<"author">;
+
+  /**
+   * Content field in *Blog Post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.content
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Categories field in *Blog Post*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.categories[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  categories: prismic.GroupField<Simplify<BlogPostDocumentDataCategoriesItem>>;
+
   /**
    * Slice Zone field in *Blog Post*
    *
@@ -241,6 +420,8 @@ export type TitleDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<TitleDocumentData>, "title", Lang>;
 
 export type AllDocumentTypes =
+  | AuthorDocument
+  | BlogCategoriesDocument
   | BlogPostDocument
   | HomeDocument
   | ShowcaseDocument
@@ -1182,8 +1363,14 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AuthorDocument,
+      AuthorDocumentData,
+      AuthorDocumentDataSocialLinksItem,
+      BlogCategoriesDocument,
+      BlogCategoriesDocumentData,
       BlogPostDocument,
       BlogPostDocumentData,
+      BlogPostDocumentDataCategoriesItem,
       BlogPostDocumentDataSlicesSlice,
       HomeDocument,
       HomeDocumentData,
