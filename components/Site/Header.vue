@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="wrapper">
+    <div class="container">
       <nav>
         <NuxtLink to="/">
           <img

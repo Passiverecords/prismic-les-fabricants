@@ -15,9 +15,9 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="page wrapper">
+  <div class="page container">
     <header>
-      <Heading level="1" class="title">{{ page?.data.meta_title }}</Heading>
+      <!-- <Heading level="1" class="title">{{ page?.data.meta_title }}</Heading> -->
     </header>
     <SliceZone
       wrapper="main"

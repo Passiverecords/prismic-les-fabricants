@@ -1,3 +1,6 @@
+// Recommended
+@import "mixins";
+
 @layer base, layouts, components, utils, overrides;
 
 @layer base {
@@ -116,9 +119,8 @@
 }
 
 @layer layout {
-  .wrapper {
-    max-inline-size: 1240px;
-    padding-inline: 2.4rem;
+  .container {
+    max-inline-size: 1600px;
     margin-inline: auto;
   }
 }
@@ -194,4 +196,21 @@
   .fade-leave-active {
     transition: opacity 100ms linear;
   }
+}
+
+// Classe qui va définir les marges externes en fonction du device
+.wrapper {
+  padding-inline: 16px;
+
+  @include min-width(tablet) {
+    padding-inline: 38px;
+  }
+
+  @include min-width(desktop) {
+    padding-inline: 62px;
+  }
+
+  // @include min-width(desktop) {
+  //   padding-inline: 62px;
+  // }
 }
