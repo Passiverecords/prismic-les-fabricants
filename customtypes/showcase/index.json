@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "showcase_text_content": {
+              "type": "SharedSlice"
+            },
             "hero_showcase": {
               "type": "SharedSlice"
             }

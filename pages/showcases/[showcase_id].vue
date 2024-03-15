@@ -15,7 +15,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="page container">
+  <div class="page wrapper">
     <header>
       <!-- <Heading level="1" class="title">{{ page?.data.meta_title }}</Heading> -->
     </header>

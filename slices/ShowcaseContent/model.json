@@ -1,0 +1,166 @@
+{
+  "id": "showcase_text_content",
+  "type": "SharedSlice",
+  "name": "ShowcaseContent",
+  "description": "ShowcaseTextContent",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Contenu projet - Texte",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "showcaseContentTitle": {
+          "type": "Text",
+          "config": {
+            "label": "Titre",
+            "placeholder": ""
+          }
+        },
+        "showcaseContentText": {
+          "type": "Text",
+          "config": {
+            "label": "Contenu texte",
+            "placeholder": ""
+          }
+        },
+        "placement": {
+          "type": "Select",
+          "config": {
+            "label": "Placement",
+            "placeholder": "",
+            "options": [
+              "gauche",
+              "centre",
+              "droite"
+            ],
+            "default_value": "gauche"
+          }
+        },
+        "bgColor": {
+          "type": "Color",
+          "config": {
+            "label": "Couleur de fond",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "withLabels",
+      "name": "Avec Labels",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "showcaseContentTitle": {
+          "type": "Text",
+          "config": {
+            "label": "Titre",
+            "placeholder": ""
+          }
+        },
+        "showcaseContentText": {
+          "type": "Text",
+          "config": {
+            "label": "Contenu texte",
+            "placeholder": ""
+          }
+        },
+        "placement": {
+          "type": "Select",
+          "config": {
+            "label": "Placement",
+            "placeholder": "",
+            "options": [
+              "gauche",
+              "centre",
+              "droite"
+            ],
+            "default_value": "gauche"
+          }
+        },
+        "bgColor": {
+          "type": "Color",
+          "config": {
+            "label": "Couleur de fond",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "Label",
+            "placeholder": ""
+          }
+        },
+        "associateField": {
+          "type": "Text",
+          "config": {
+            "label": "Chiffre associé",
+            "placeholder": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "withPicture",
+      "name": "Avec Image",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "showcaseContentTitle": {
+          "type": "Text",
+          "config": {
+            "label": "Titre",
+            "placeholder": ""
+          }
+        },
+        "showcaseContentText": {
+          "type": "Text",
+          "config": {
+            "label": "Contenu texte",
+            "placeholder": ""
+          }
+        },
+        "picture": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "placement": {
+          "type": "Select",
+          "config": {
+            "label": "Placement",
+            "placeholder": "",
+            "options": [
+              "gauche",
+              "centre",
+              "droite"
+            ],
+            "default_value": "gauche"
+          }
+        },
+        "bgColor": {
+          "type": "Color",
+          "config": {
+            "label": "Couleur de fond",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

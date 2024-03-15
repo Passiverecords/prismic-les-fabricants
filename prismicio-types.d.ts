@@ -323,7 +323,9 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-type ShowcaseDocumentDataSlicesSlice = HeroShowcaseSlice;
+type ShowcaseDocumentDataSlicesSlice =
+  | ShowcaseTextContentSlice
+  | HeroShowcaseSlice;
 
 /**
  * Content for Showcase documents
@@ -1182,6 +1184,238 @@ export type ProjectsListSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ShowcaseContent → Primary*
+ */
+export interface ShowcaseTextContentSliceDefaultPrimary {
+  /**
+   * Titre field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.primary.showcaseContentTitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  showcaseContentTitle: prismic.KeyTextField;
+
+  /**
+   * Contenu texte field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.primary.showcaseContentText
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  showcaseContentText: prismic.KeyTextField;
+
+  /**
+   * Placement field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: gauche
+   * - **API ID Path**: showcase_text_content.primary.placement
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  placement: prismic.SelectField<"gauche" | "centre" | "droite", "filled">;
+
+  /**
+   * Couleur de fond field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.primary.bgColor
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  bgColor: prismic.ColorField;
+}
+
+/**
+ * Contenu projet - Texte variation for ShowcaseContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ShowcaseTextContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ShowcaseTextContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *ShowcaseContent → Primary*
+ */
+export interface ShowcaseTextContentSliceWithLabelsPrimary {
+  /**
+   * Titre field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.primary.showcaseContentTitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  showcaseContentTitle: prismic.KeyTextField;
+
+  /**
+   * Contenu texte field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.primary.showcaseContentText
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  showcaseContentText: prismic.KeyTextField;
+
+  /**
+   * Placement field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: gauche
+   * - **API ID Path**: showcase_text_content.primary.placement
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  placement: prismic.SelectField<"gauche" | "centre" | "droite", "filled">;
+
+  /**
+   * Couleur de fond field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.primary.bgColor
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  bgColor: prismic.ColorField;
+}
+
+/**
+ * Primary content in *ShowcaseContent → Items*
+ */
+export interface ShowcaseTextContentSliceWithLabelsItem {
+  /**
+   * Label field in *ShowcaseContent → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Chiffre associé field in *ShowcaseContent → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.items[].associateField
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  associateField: prismic.KeyTextField;
+}
+
+/**
+ * Avec Labels variation for ShowcaseContent Slice
+ *
+ * - **API ID**: `withLabels`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ShowcaseTextContentSliceWithLabels = prismic.SharedSliceVariation<
+  "withLabels",
+  Simplify<ShowcaseTextContentSliceWithLabelsPrimary>,
+  Simplify<ShowcaseTextContentSliceWithLabelsItem>
+>;
+
+/**
+ * Primary content in *ShowcaseContent → Primary*
+ */
+export interface ShowcaseTextContentSliceWithPicturePrimary {
+  /**
+   * Titre field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.primary.showcaseContentTitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  showcaseContentTitle: prismic.KeyTextField;
+
+  /**
+   * Contenu texte field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.primary.showcaseContentText
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  showcaseContentText: prismic.KeyTextField;
+
+  /**
+   * Image field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.primary.picture
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  picture: prismic.ImageField<never>;
+
+  /**
+   * Placement field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: gauche
+   * - **API ID Path**: showcase_text_content.primary.placement
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  placement: prismic.SelectField<"gauche" | "centre" | "droite", "filled">;
+
+  /**
+   * Couleur de fond field in *ShowcaseContent → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: showcase_text_content.primary.bgColor
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  bgColor: prismic.ColorField;
+}
+
+/**
+ * Avec Image variation for ShowcaseContent Slice
+ *
+ * - **API ID**: `withPicture`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ShowcaseTextContentSliceWithPicture = prismic.SharedSliceVariation<
+  "withPicture",
+  Simplify<ShowcaseTextContentSliceWithPicturePrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ShowcaseContent*
+ */
+type ShowcaseTextContentSliceVariation =
+  | ShowcaseTextContentSliceDefault
+  | ShowcaseTextContentSliceWithLabels
+  | ShowcaseTextContentSliceWithPicture;
+
+/**
+ * ShowcaseContent Shared Slice
+ *
+ * - **API ID**: `showcase_text_content`
+ * - **Description**: ShowcaseTextContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ShowcaseTextContentSlice = prismic.SharedSlice<
+  "showcase_text_content",
+  ShowcaseTextContentSliceVariation
+>;
+
+/**
  * Primary content in *Testimonials → Items*
  */
 export interface TestimonialsSliceDefaultItem {
@@ -1425,6 +1659,15 @@ declare module "@prismicio/client" {
       ProjectsListSliceVariation,
       ProjectsListSliceDefault,
       ProjectsListSliceWithLinks,
+      ShowcaseTextContentSlice,
+      ShowcaseTextContentSliceDefaultPrimary,
+      ShowcaseTextContentSliceWithLabelsPrimary,
+      ShowcaseTextContentSliceWithLabelsItem,
+      ShowcaseTextContentSliceWithPicturePrimary,
+      ShowcaseTextContentSliceVariation,
+      ShowcaseTextContentSliceDefault,
+      ShowcaseTextContentSliceWithLabels,
+      ShowcaseTextContentSliceWithPicture,
       TestimonialsSlice,
       TestimonialsSliceDefaultItem,
       TestimonialsSliceWithTitlePrimary,
