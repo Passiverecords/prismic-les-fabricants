@@ -309,6 +309,17 @@ interface HomeDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   meta_title: prismic.KeyTextField;
+
+  /**
+   * Terme mis en avant field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.highlight_term
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  highlight_term: prismic.KeyTextField;
 }
 
 /**
@@ -388,53 +399,12 @@ export type ShowcaseDocument<Lang extends string = string> =
     Lang
   >;
 
-/**
- * Content for title documents
- */
-interface TitleDocumentData {
-  /**
-   * title field in *title*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Le titre
-   * - **API ID Path**: title.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * TitleLevel field in *title*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: Le niveau de titre
-   * - **Default Value**: 2
-   * - **API ID Path**: title.titlelevel
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  titlelevel: prismic.SelectField<"2" | "3" | "4" | "5" | "6", "filled">;
-}
-
-/**
- * title document from Prismic
- *
- * - **API ID**: `title`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type TitleDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<TitleDocumentData>, "title", Lang>;
-
 export type AllDocumentTypes =
   | AuthorDocument
   | BlogCategoriesDocument
   | BlogPostDocument
   | HomeDocument
-  | ShowcaseDocument
-  | TitleDocument;
+  | ShowcaseDocument;
 
 /**
  * Primary content in *DuetContent → Primary*
@@ -1386,8 +1356,6 @@ declare module "@prismicio/client" {
       ShowcaseDocument,
       ShowcaseDocumentData,
       ShowcaseDocumentDataSlicesSlice,
-      TitleDocument,
-      TitleDocumentData,
       AllDocumentTypes,
       DuetContentSlice,
       DuetContentSliceDefaultPrimary,

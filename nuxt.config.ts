@@ -33,6 +33,30 @@ export default defineNuxtConfig({
   },
   prismic: {
     endpoint: "blokche-les-fabricants",
+    clientConfig: {
+      routes: [
+        {
+          type: "home",
+          path: "/",
+        },
+        {
+          type: "showcase",
+          path: "/showcases/:uid",
+        },
+        {
+          type: "blog_categories",
+          path: "/blog/categories/:uid",
+        },
+        {
+          type: "author",
+          path: "/blog/auteurs/:uid",
+        },
+        {
+          type: "blog_post",
+          path: "/blog/:uid",
+        },
+      ],
+    },
   },
   image: {
     prismic: {},

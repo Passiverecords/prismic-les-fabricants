@@ -22,10 +22,14 @@ const { data: page } = await useAsyncData("[home]", () =>
 );
 
 const title = computed(() => {
-  return page?.value?.data.meta_title?.replace(
-    /succès/gi,
-    "<span class='mark'>$&</span>"
-  );
+  if (page.value?.data.highlight_term?.length) {
+    return page?.value?.data.meta_title?.replace(
+      new RegExp(page.value.data.highlight_term, "gi"),
+      "<span class='mark'>$&</span>"
+    );
+  } else {
+    return page.value?.data.meta_title;
+  }
 });
 
 useSeoMeta({
