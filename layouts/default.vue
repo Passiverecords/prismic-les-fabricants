@@ -43,5 +43,12 @@ router.afterEach((to, from) => {
 <style scoped>
 main {
   outline: none;
+  flex: 1;
+}
+.layout {
+  display: flex;
+  flex-flow: column nowrap;
+  min-block-size: 100dvh;
+  min-block-size: 100dvd;
 }
 </style>
