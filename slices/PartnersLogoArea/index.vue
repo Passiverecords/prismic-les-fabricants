@@ -30,6 +30,7 @@ defineProps(
             :width="image.partner_logo.dimensions.width"
             :height="image.partner_logo.dimensions.height"
             :img-attrs="{ class: 'partners-area__img' }"
+            sizes="140px"
           />
         </template>
       </div>
