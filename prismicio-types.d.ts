@@ -650,121 +650,6 @@ export type DuetContentSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *HeroBanner → Primary*
- */
-export interface HeroBannerSliceDefaultPrimary {
-  /**
-   * Image field in *HeroBanner → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_banner.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Text field in *HeroBanner → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_banner.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  text: prismic.KeyTextField;
-}
-
-/**
- * Default variation for HeroBanner Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroBannerSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<HeroBannerSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Primary content in *HeroBanner → Primary*
- */
-export interface HeroBannerSliceWithCallToActionPrimary {
-  /**
-   * Image field in *HeroBanner → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_banner.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Text field in *HeroBanner → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_banner.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  text: prismic.KeyTextField;
-
-  /**
-   * Call To Action Text field in *HeroBanner → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_banner.primary.call_to_action_text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  call_to_action_text: prismic.KeyTextField;
-
-  /**
-   * Call To Action Link field in *HeroBanner → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero_banner.primary.call_to_action_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  call_to_action_link: prismic.LinkField;
-}
-
-/**
- * With Call To Action variation for HeroBanner Slice
- *
- * - **API ID**: `withCallToAction`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroBannerSliceWithCallToAction = prismic.SharedSliceVariation<
-  "withCallToAction",
-  Simplify<HeroBannerSliceWithCallToActionPrimary>,
-  never
->;
-
-/**
- * Slice variation for *HeroBanner*
- */
-type HeroBannerSliceVariation =
-  | HeroBannerSliceDefault
-  | HeroBannerSliceWithCallToAction;
-
-/**
- * HeroBanner Shared Slice
- *
- * - **API ID**: `hero_banner`
- * - **Description**: HeroBanner
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroBannerSlice = prismic.SharedSlice<
-  "hero_banner",
-  HeroBannerSliceVariation
->;
-
-/**
  * Primary content in *HeroShowcase → Primary*
  */
 export interface HeroShowcaseSliceDefaultPrimary {
@@ -1366,12 +1251,6 @@ declare module "@prismicio/client" {
       DuetContentSliceDefault,
       DuetContentSliceWIthCallToAction,
       DuetContentSliceTextOnly,
-      HeroBannerSlice,
-      HeroBannerSliceDefaultPrimary,
-      HeroBannerSliceWithCallToActionPrimary,
-      HeroBannerSliceVariation,
-      HeroBannerSliceDefault,
-      HeroBannerSliceWithCallToAction,
       HeroShowcaseSlice,
       HeroShowcaseSliceDefaultPrimary,
       HeroShowcaseSliceDefaultItem,
