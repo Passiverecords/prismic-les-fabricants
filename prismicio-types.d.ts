@@ -798,17 +798,6 @@ export interface HighlightedBenefitsSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
-
-  /**
-   * Niveau de titre field in *HighlightedBenefits → Items*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: 2
-   * - **API ID Path**: highlighted_benefits.items[].heading_level
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  heading_level: prismic.SelectField<"2" | "3" | "4" | "5", "filled">;
 }
 
 /**

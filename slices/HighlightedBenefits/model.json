@@ -45,20 +45,6 @@
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em,list-item,o-list-item"
           }
-        },
-        "heading_level": {
-          "type": "Select",
-          "config": {
-            "label": "Niveau de titre",
-            "placeholder": "",
-            "options": [
-              "2",
-              "3",
-              "4",
-              "5"
-            ],
-            "default_value": "2"
-          }
         }
       }
     }
