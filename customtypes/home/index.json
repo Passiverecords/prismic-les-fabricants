@@ -55,13 +55,6 @@
           "placeholder": "A title of the page used for social media and search engines"
         },
         "type": "Text"
-      },
-      "highlight_term": {
-        "type": "Text",
-        "config": {
-          "label": "Terme mis en avant",
-          "placeholder": ""
-        }
       }
     }
   }

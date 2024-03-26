@@ -309,17 +309,6 @@ interface HomeDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   meta_title: prismic.KeyTextField;
-
-  /**
-   * Terme mis en avant field in *Home*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.highlight_term
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  highlight_term: prismic.KeyTextField;
 }
 
 /**
