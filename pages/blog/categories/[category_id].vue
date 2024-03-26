@@ -3,9 +3,10 @@
     <header>
       <h1 class="title">
         Articles associés à la catégorie &laquo;&nbsp;{{
-          category_name
+          category.name
         }}&nbsp;&raquo;
       </h1>
+      <PrismicRichText :field="category.description" />
       <template v-if="data?.posts.length">
         <ul>
           <li v-for="post in data.posts" :key="post.id">
@@ -92,12 +93,15 @@ if (error.value) {
   });
 }
 
-const category_name = computed(() => {
-  return data.value?.category.data.label;
+const category = computed(() => {
+  return {
+    name: data.value?.category.data.label,
+    description: data.value?.category.data.description,
+  };
 });
 
 const title = computed(() => {
-  return `Articles associés à la catégorie ${category_name.value}`;
+  return `Articles associés à la catégorie ${category.value.name}`;
 });
 
 useSeoMeta({ title });

@@ -60,6 +60,7 @@ const { data, error } = await useAsyncData(
            category {
             uid
             label
+            description
            }
           }
           author {

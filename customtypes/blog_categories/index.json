@@ -18,6 +18,15 @@
           "label": "label",
           "placeholder": ""
         }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "description",
+          "placeholder": "A short description for the category",
+          "allowTargetBlank": false,
+          "multi": "paragraph,strong,em"
+        }
       }
     }
   }

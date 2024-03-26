@@ -58,7 +58,7 @@ interface AuthorDocumentData {
   lastname: prismic.KeyTextField;
 
   /**
-   * biography field in *Author*
+   * Biography field in *Author*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -117,6 +117,17 @@ interface BlogCategoriesDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
+
+  /**
+   * description field in *Blog Categories*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: A short description for the category
+   * - **API ID Path**: blog_categories.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
 }
 
 /**
