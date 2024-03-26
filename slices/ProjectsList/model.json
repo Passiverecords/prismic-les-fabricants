@@ -84,8 +84,8 @@
         "highlight_terms": {
           "type": "Text",
           "config": {
-            "label": "Highlight Terms",
-            "placeholder": "Comma separated terms you want to highlight"
+            "label": "Highlight Terms (in Title field)",
+            "placeholder": "Comma separated terms you want to highlight in the title field"
           }
         },
         "niveau_de_titre": {

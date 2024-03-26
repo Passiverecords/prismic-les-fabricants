@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Heading } from "#build/components";
-import { type Content } from "@prismicio/client";
+import { type Content, isFilled } from "@prismicio/client";
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -56,15 +56,18 @@ function next_title_level(
     <ul v-if="slice.variation === 'default'">
       <li v-for="item of slice.items">
         <Heading
+          v-if="isFilled.keyText(item.title)"
           :level="next_title_level(slice.primary.niveau_de_titre)"
           class="title project-title"
           >{{ item.title }}</Heading
         >
-        <p>{{ item.short_description }}</p>
+        <p v-if="isFilled.keyText(item.short_description)">
+          {{ item.short_description }}
+        </p>
         <PrismicImage :field="item.image"></PrismicImage>
         <NuxtPicture
+          v-if="isFilled.image(item.image)"
           class="picture"
-          v-if="item.image.url"
           :alt="item.image.alt ?? ''"
           format="avif,webp"
           :height="item.image.dimensions?.height ?? 100"
@@ -76,6 +79,7 @@ function next_title_level(
     <ul v-if="slice.variation === 'withLinks'">
       <li v-for="item of slice.items">
         <Heading
+          v-if="isFilled.keyText(item.title)"
           :level="next_title_level(slice.primary.niveau_de_titre)"
           class="title project-title"
         >
@@ -85,8 +89,8 @@ function next_title_level(
         </Heading>
         <p>{{ item.short_description }}</p>
         <NuxtPicture
+          v-if="isFilled.image(item.image)"
           class="picture"
-          v-if="item.image.url"
           :alt="item.image.alt ?? ''"
           format="avif,webp"
           :height="item.image.dimensions?.height ?? 100"

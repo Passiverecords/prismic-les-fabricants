@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Content } from "@prismicio/client";
+import { type Content, isFilled } from "@prismicio/client";
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -23,7 +23,7 @@ defineProps(
         <template v-for="image in slice.items">
           <NuxtPicture
             class="picture"
-            v-if="image.partner_logo.url"
+            v-if="isFilled.image(image.partner_logo)"
             :alt="image.partner_logo.alt ?? ''"
             decoding="async"
             :src="image.partner_logo.url"

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { type Content } from "@prismicio/client";
+import { type Content, isFilled } from "@prismicio/client";
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
-defineProps(
+const props = defineProps(
   getSliceComponentProps<Content.ImagesSequenceSlice>([
     "slice",
     "index",
@@ -11,6 +11,15 @@ defineProps(
     "context",
   ])
 );
+
+const { slice } = toRefs(props);
+
+const is_data_valid = computed(() => {
+  return (
+    slice.value.items.length === 5 &&
+    slice.value.items.every((item) => isFilled.image(item.image))
+  );
+});
 </script>
 
 <template>
@@ -18,7 +27,7 @@ defineProps(
     class="pictures-sequence"
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
-    v-if="slice.items.length === 5"
+    v-if="is_data_valid"
   >
     <div class="pictures-sequence__inner">
       <template v-for="item in slice.items">
@@ -36,7 +45,13 @@ defineProps(
       </template>
     </div>
   </section>
-  <p v-else>Assurez-vous d'ajouter 5 images !</p>
+  <p
+    :data-slice-type="slice.slice_type"
+    :data-slice-variation="slice.variation"
+    v-else
+  >
+    Assurez-vous d'ajouter 5 images pour la section.
+  </p>
 </template>
 
 <style scoped lang="scss">

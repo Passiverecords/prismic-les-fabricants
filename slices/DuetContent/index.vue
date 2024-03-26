@@ -15,7 +15,9 @@ const props = defineProps(
 const { slice } = toRefs(props);
 
 const title = computed(() => {
-  const term = slice.value.items.map((item) => item.highlight_term);
+  const term = slice.value.items
+    .map((item) => item.highlight_term)
+    .filter(Boolean);
   return term.length > 0
     ? slice.value.primary.title?.replaceAll(
         new RegExp(`${term.join("|")}`, "gi"),
@@ -92,6 +94,11 @@ const title = computed(() => {
 .picture :deep(img) {
   height: auto;
 }
+
+.title {
+  margin-block-end: 0;
+}
+
 .c-duet-content {
   container: duet-content / inline-size;
   .c-duet-content__inner {
@@ -108,7 +115,6 @@ const title = computed(() => {
       gap: 1.6rem;
       .title {
         font-size: clamp(5.4rem, 4.2rem + 3cqi, 7.2rem);
-        margin-block-end: 0;
         line-height: 1;
 
         .c-duet-content__subheader {

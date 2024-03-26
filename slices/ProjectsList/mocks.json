@@ -80,8 +80,8 @@
 			},
 			"highlight_terms": {
 				"__TYPE__": "FieldContent",
-				"type": "Text",
-				"value": "réussis"
+				"value": "wish",
+				"type": "Text"
 			},
 			"niveau_de_titre": {
 				"__TYPE__": "FieldContent",

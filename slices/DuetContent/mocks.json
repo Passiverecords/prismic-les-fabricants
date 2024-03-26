@@ -29,12 +29,12 @@
 			"title": {
 				"__TYPE__": "FieldContent",
 				"type": "Text",
-				"value": "Le titre de la section"
+				"value": "Un titre inspiré pour une section de qualité"
 			},
 			"title_level": {
 				"__TYPE__": "FieldContent",
-				"value": "3",
-				"type": "Select"
+				"type": "Select",
+				"value": "2"
 			},
 			"content": {
 				"__TYPE__": "StructuredTextContent",
@@ -42,8 +42,24 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Laboris amet mollit in pariatur consequat excepteur eiusmod. Sunt mollit ex occaecat ipsum aliqua dolore enim minim non nisi aliquip irure proident eu. Id officia consequat qui commodo velit nisi ex eu quis."
-						}
+							"text": "Eu fugiat voluptate sunt id dolor et ut do ea laborum et ut. Commodo aute minim sint nostrud dolore ullamco magna. Aliquip sint sint nisi amet.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Proin orci sem, laoreet at iaculis ac, tincidunt sed nibh. Sed eu vehicula ligula, a luctus nunc. Mauris blandit mollis dolor, sit amet venenatis sapien finibus et. Praesent placerat ex quis felis imperdiet, in vehicula nibh lacinia.",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 16,
+									"end": 34
+								}
+							]
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -61,7 +77,7 @@
 						{
 							"__TYPE__": "FieldContent",
 							"type": "Text",
-							"value": "titre"
+							"value": "inspiré"
 						}
 					]
 				]
@@ -74,7 +90,7 @@
 						{
 							"__TYPE__": "FieldContent",
 							"type": "Text",
-							"value": "section"
+							"value": "qualité"
 						}
 					]
 				]
@@ -155,11 +171,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "textOnly",
 		"primary": {
-			"title": {
-				"__TYPE__": "FieldContent",
-				"value": "steel",
-				"type": "Text"
-			},
 			"title_level": {
 				"__TYPE__": "FieldContent",
 				"value": "2",
@@ -171,15 +182,30 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Fugiat est ipsum amet amet. Mollit dolore eiusmod ut dolor tempor ipsum."
-						}
+							"text": "Proin orci sem, laoreet at iaculis ac, tincidunt sed nibh. Sed eu vehicula ligula, a luctus nunc. Mauris blandit mollis dolor, sit amet venenatis sapien finibus et. Praesent placerat ex quis felis imperdiet, in vehicula nibh lacinia.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nullam consequat erat ligula, sed elementum lorem finibus at. Pellentesque tellus augue, facilisis eget facilisis sit amet, lobortis sit amet lacus. Ut in purus bibendum, tempor nulla ac, dictum orci. Morbi sed elit leo. Mauris rutrum porttitor aliquam. Vestibulum elementum velit vel tortor laoreet feugiat.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Le titre inspiré d'une section de qualité"
+			},
 			"sub_title": {
 				"__TYPE__": "FieldContent",
-				"value": "return",
-				"type": "Text"
+				"type": "Text",
+				"value": "On vous accompagne !"
 			}
 		},
 		"items": [

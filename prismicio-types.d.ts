@@ -434,7 +434,7 @@ export interface DuetContentSliceDefaultPrimary {
    * Title Level field in *DuetContent → Primary*
    *
    * - **Field Type**: Select
-   * - **Placeholder**: *None*
+   * - **Placeholder**: Be careful in the order of your title for accessibility purpose.
    * - **Default Value**: 2
    * - **API ID Path**: duet_content.primary.title_level
    * - **Documentation**: https://prismic.io/docs/field#select
@@ -471,7 +471,7 @@ export interface DuetContentSliceDefaultItem {
    * Highlight Term field in *DuetContent → Items*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: *None*
+   * - **Placeholder**: A text value you want to highlight in the title
    * - **API ID Path**: duet_content.items[].highlight_term
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
@@ -519,7 +519,7 @@ export interface DuetContentSliceWIthCallToActionPrimary {
    * Title Level field in *DuetContent → Primary*
    *
    * - **Field Type**: Select
-   * - **Placeholder**: *None*
+   * - **Placeholder**: Be careful and provide coherent title order for accessibility purpose!
    * - **Default Value**: 2
    * - **API ID Path**: duet_content.primary.title_level
    * - **Documentation**: https://prismic.io/docs/field#select
@@ -938,10 +938,10 @@ export interface ProjectsListSliceWithLinksPrimary {
   title: prismic.KeyTextField;
 
   /**
-   * Highlight Terms field in *ProjectsList → Primary*
+   * Highlight Terms (in Title field) field in *ProjectsList → Primary*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: Comma separated terms you want to highlight
+   * - **Placeholder**: Comma separated terms you want to highlight in the title field
    * - **API ID Path**: projects_list.primary.highlight_terms
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */

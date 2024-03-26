@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Content, type RichTextField } from "@prismicio/client";
+import { type Content, type RichTextField, isFilled } from "@prismicio/client";
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -27,7 +27,11 @@ function is_long_content(value: RichTextField, limit = 300) {
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <template v-if="slice.variation === 'withTitle'">
+    <template
+      v-if="
+        slice.variation === 'withTitle' && isFilled.keyText(slice.primary.title)
+      "
+    >
       <Heading class="title" :level="slice.primary.level">{{
         slice.primary.title
       }}</Heading>
@@ -41,16 +45,22 @@ function is_long_content(value: RichTextField, limit = 300) {
         <PrismicRichText class="content" :field="item.content" />
         <footer>
           <NuxtImg
-            v-if="item.author_image.url"
+            v-if="isFilled.image(item.author_image)"
             class="avatar"
             :alt="item.author_image.alt ?? ''"
             :src="item.author_image.url"
             sizes="80px"
           />
           <div>
-            <p>{{ item.author_name }}</p>
-            <p>{{ item.author_role }}</p>
-            <p>{{ item.author_company }}</p>
+            <p v-if="isFilled.keyText(item.author_name)">
+              {{ item.author_name }}
+            </p>
+            <p v-if="isFilled.keyText(item.author_role)">
+              {{ item.author_role }}
+            </p>
+            <p v-if="isFilled.keyText(item.author_company)">
+              {{ item.author_company }}
+            </p>
           </div>
         </footer>
       </li>
