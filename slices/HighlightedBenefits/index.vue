@@ -50,7 +50,7 @@ const { slice } = toRefs(props);
 .c-hightlighted-benefits {
   background-color: var(--surface-black);
   color: white;
-  padding-block: 4.6rem 5.2rem;
+  padding-block: 7.2rem;
   container-type: inline-size;
   &__items {
     display: grid;
