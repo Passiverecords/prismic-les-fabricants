@@ -6,7 +6,11 @@
           category.name
         }}&nbsp;&raquo;
       </h1>
-      <PrismicRichText :field="category.description" />
+      <PrismicRichText
+        class="description"
+        v-if="isFilled.richText(category.description)"
+        :field="category.description"
+      />
       <template v-if="data?.posts.length">
         <ul>
           <li v-for="post in data.posts" :key="post.id">
@@ -15,6 +19,7 @@
             >
             par
             <NuxtLink
+              class="author"
               :to="{
                 name: 'blog-auteurs-author_id',
                 params: {
@@ -38,6 +43,7 @@
 </template>
 
 <script lang="ts" setup>
+import { isFilled } from "@prismicio/client";
 interface IAuthorData {
   uid: string;
   data: {
@@ -107,8 +113,28 @@ const title = computed(() => {
 useSeoMeta({ title });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .page {
   margin-block-end: 100px;
+}
+
+.description {
+  font-size: 1.125em;
+  color: var(--surface-black);
+  opacity: 0.7;
+}
+
+.author {
+  text-decoration: none;
+  color: color-mix(in srgb, var(--color-green-soft), black 50%);
+}
+
+ul {
+  margin-block-start: 2.4rem;
+  li {
+    & + li {
+      margin-block-start: 1rem;
+    }
+  }
 }
 </style>
