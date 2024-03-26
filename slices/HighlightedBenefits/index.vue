@@ -70,6 +70,7 @@ const { slice } = toRefs(props);
 
 .title:deep(*) {
   margin-block-start: 0;
+  font-weight: 400;
 }
 
 .title.-with-subtitle:deep(*) {
