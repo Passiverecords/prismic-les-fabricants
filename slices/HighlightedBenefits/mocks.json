@@ -1,0 +1,158 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Notre approche métier unique.",
+							"spans": [
+								{
+									"type": "em",
+									"start": 22,
+									"end": 28
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"highlighted_terms": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "unique"
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Ni forfait, ni régie."
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Nous relions en continu les enjeux business, l’expérience utilisateur et la technologie"
+						}
+					],
+					[
+						"content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "list-item",
+									"content": {
+										"text": "Au moins un expert de chaque domaine dans chaque projet",
+										"spans": []
+									},
+									"direction": "ltr"
+								},
+								{
+									"type": "list-item",
+									"content": {
+										"text": "La maîtrise du meilleur des méthodologies de conception",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Nous pilotons ensemble et par l’impact"
+						}
+					],
+					[
+						"content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "list-item",
+									"content": {
+										"text": "Pilotage anti effet-tunnel",
+										"spans": []
+									},
+									"direction": "ltr"
+								},
+								{
+									"type": "list-item",
+									"content": {
+										"text": "Approche pragmatique et ultra-agile pour maîtriser la dépense et sécuriser le ROI",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			},
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"label",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Text",
+							"value": "Nous ouvrons la boîte noire"
+						}
+					],
+					[
+						"content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "list-item",
+									"content": {
+										"text": "Transparence totale sur notre relevé d’heures",
+										"spans": []
+									},
+									"direction": "ltr"
+								},
+								{
+									"type": "list-item",
+									"content": {
+										"text": "Ajustement de la facturation à la valeur perçue",
+										"spans": []
+									},
+									"direction": "ltr"
+								},
+								{
+									"type": "list-item",
+									"content": {
+										"text": "Évaluation de la coopération",
+										"spans": []
+									},
+									"direction": "ltr"
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

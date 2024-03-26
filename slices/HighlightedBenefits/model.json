@@ -1,0 +1,66 @@
+{
+  "id": "highlighted_benefits",
+  "type": "SharedSlice",
+  "name": "HighlightedBenefits",
+  "description": "HighlightedBenefits",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "heading2,heading3,heading4,heading5,heading6,em"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Sous-titre",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "Label",
+            "placeholder": "Le label du panneau"
+          }
+        },
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Contenu",
+            "placeholder": "Le contenu du panneau",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,list-item,o-list-item"
+          }
+        },
+        "heading_level": {
+          "type": "Select",
+          "config": {
+            "label": "Niveau de titre",
+            "placeholder": "",
+            "options": [
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "default_value": "2"
+          }
+        }
+      }
+    }
+  ]
+}

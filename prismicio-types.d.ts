@@ -269,6 +269,7 @@ export type BlogPostDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | HighlightedBenefitsSlice
   | ImagesSequenceSlice
   | ProjectsListSlice
   | PartnersLogoAreaSlice
@@ -747,6 +748,97 @@ type HeroShowcaseSliceVariation = HeroShowcaseSliceDefault;
 export type HeroShowcaseSlice = prismic.SharedSlice<
   "hero_showcase",
   HeroShowcaseSliceVariation
+>;
+
+/**
+ * Primary content in *HighlightedBenefits → Primary*
+ */
+export interface HighlightedBenefitsSliceDefaultPrimary {
+  /**
+   * Title field in *HighlightedBenefits → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlighted_benefits.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Sous-titre field in *HighlightedBenefits → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlighted_benefits.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *HighlightedBenefits → Items*
+ */
+export interface HighlightedBenefitsSliceDefaultItem {
+  /**
+   * Label field in *HighlightedBenefits → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Le label du panneau
+   * - **API ID Path**: highlighted_benefits.items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Contenu field in *HighlightedBenefits → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Le contenu du panneau
+   * - **API ID Path**: highlighted_benefits.items[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Niveau de titre field in *HighlightedBenefits → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: 2
+   * - **API ID Path**: highlighted_benefits.items[].heading_level
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  heading_level: prismic.SelectField<"2" | "3" | "4" | "5", "filled">;
+}
+
+/**
+ * Default variation for HighlightedBenefits Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HighlightedBenefitsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HighlightedBenefitsSliceDefaultPrimary>,
+  Simplify<HighlightedBenefitsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *HighlightedBenefits*
+ */
+type HighlightedBenefitsSliceVariation = HighlightedBenefitsSliceDefault;
+
+/**
+ * HighlightedBenefits Shared Slice
+ *
+ * - **API ID**: `highlighted_benefits`
+ * - **Description**: HighlightedBenefits
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HighlightedBenefitsSlice = prismic.SharedSlice<
+  "highlighted_benefits",
+  HighlightedBenefitsSliceVariation
 >;
 
 /**
@@ -1256,6 +1348,11 @@ declare module "@prismicio/client" {
       HeroShowcaseSliceDefaultItem,
       HeroShowcaseSliceVariation,
       HeroShowcaseSliceDefault,
+      HighlightedBenefitsSlice,
+      HighlightedBenefitsSliceDefaultPrimary,
+      HighlightedBenefitsSliceDefaultItem,
+      HighlightedBenefitsSliceVariation,
+      HighlightedBenefitsSliceDefault,
       ImagesSequenceSlice,
       ImagesSequenceSliceDefaultItem,
       ImagesSequenceSliceVariation,
