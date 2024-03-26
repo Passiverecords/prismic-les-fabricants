@@ -195,4 +195,12 @@
   .fade-leave-active {
     transition: opacity 100ms linear;
   }
+
+  .break-through {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-inline-size: revert;
+  }
 }

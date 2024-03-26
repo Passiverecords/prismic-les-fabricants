@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Content } from "@prismicio/client";
+import { type Content, isFilled } from "@prismicio/client";
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -19,6 +19,7 @@ defineProps(
     :data-slice-variation="slice.variation"
   >
     <PrismicImage
+      v-if="isFilled.image(slice.primary.showcasepicture)"
       :field="slice.primary.showcasepicture"
       class="break-through"
     />
@@ -44,14 +45,6 @@ defineProps(
 </template>
 
 <style scoped lang="scss">
-.break-through {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  max-inline-size: revert;
-}
-
 .showcase-content {
   max-inline-size: 80ch;
 }
