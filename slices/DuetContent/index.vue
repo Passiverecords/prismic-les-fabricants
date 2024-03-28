@@ -56,8 +56,6 @@ const title = computed(() => {
         />
         <template v-if="slice.variation === 'wIthCallToAction'">
           <PrismicLink
-            width="90"
-            height="90"
             class="c-call-to-action"
             :field="slice.primary.call_to_action_destination"
           >
