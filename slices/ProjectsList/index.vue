@@ -64,7 +64,6 @@ function next_title_level(
         <p v-if="isFilled.keyText(item.short_description)">
           {{ item.short_description }}
         </p>
-        <PrismicImage :field="item.image"></PrismicImage>
         <NuxtPicture
           v-if="isFilled.image(item.image)"
           class="picture"
@@ -73,6 +72,7 @@ function next_title_level(
           :height="item.image.dimensions?.height ?? 100"
           :width="item.image.dimensions?.width ?? 0"
           :src="item.image.url"
+          sizes="100vw md:460px"
         />
       </li>
     </ul>

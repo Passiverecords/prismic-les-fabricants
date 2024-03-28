@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <div class="wrapper">
+    <div class="wrapper" style="padding-block: 2.4rem 10rem">
       <template v-if="error.statusCode === 404">
         <header>
           <h1 class="title">
@@ -36,9 +36,3 @@ useSeoMeta({
   title,
 });
 </script>
-
-<style scoped>
-.wrapper {
-  padding-block: 2.4rem 10rem;
-}
-</style>
