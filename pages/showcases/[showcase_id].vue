@@ -20,7 +20,7 @@ useSeoMeta({
       <Heading level="1" class="title">{{ page?.data.meta_title }}</Heading>
     </header>
     <SliceZone
-      wrapper="main"
+      wrapper="div"
       :slices="page?.data.slices ?? []"
       :components="components"
     />
