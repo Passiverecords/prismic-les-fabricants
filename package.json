@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@nuxt/image": "^1.4.0",
-    "@nuxtjs/prismic": "^3.1.0",
+    "@nuxtjs/prismic": "^3.1.1",
     "@slicemachine/adapter-nuxt": "^0.3.38",
     "sass": "^1.72.0",
     "slice-machine-ui": "^1.26.0"
