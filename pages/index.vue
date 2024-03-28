@@ -15,6 +15,7 @@
 
 <script setup lang="ts">
 import { components } from "~/slices";
+import { isFilled } from "@prismicio/client";
 
 const prismic = usePrismic();
 const { data: page } = await useAsyncData("[home]", () =>
@@ -22,14 +23,19 @@ const { data: page } = await useAsyncData("[home]", () =>
 );
 
 const title = computed(() => {
-  if (page.value?.data.highlight_term?.length) {
-    return page?.value?.data.meta_title?.replace(
-      new RegExp(page.value.data.highlight_term, "gi"),
+  const title_value = isFilled.keyText(page.value?.data.title)
+    ? page.value.data.title
+    : page.value?.data.meta_title;
+  if (
+    isFilled.keyText(page.value?.data.highlighted_term) &&
+    page.value?.data.highlighted_term.length > 0
+  ) {
+    return title_value?.replaceAll(
+      new RegExp(page.value?.data.highlighted_term, "gi"),
       "<span class='mark'>$&</span>"
     );
-  } else {
-    return page.value?.data.meta_title;
   }
+  return title_value;
 });
 
 useSeoMeta({

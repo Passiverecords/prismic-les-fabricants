@@ -281,6 +281,28 @@ type HomeDocumentDataSlicesSlice =
  */
 interface HomeDocumentData {
   /**
+   * Titre field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Main title
+   * - **API ID Path**: home.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Emphase field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.highlighted_term
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  highlighted_term: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *Home*
    *
    * - **Field Type**: Slice Zone
