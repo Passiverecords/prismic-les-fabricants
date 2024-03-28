@@ -12,6 +12,7 @@
         height="32"
         :class="{ expanded: open }"
         viewBox="0 0 512 512"
+        aria-hidden="true"
       >
         <path
           fill="none"
